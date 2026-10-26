@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WölzerTaler · Naturgarten Niederwölz</title>
+<meta name="description" content="WölzerTaler – Naturgarten in Niederwölz, Steiermark. Frisches Gemüse aus dem Garten, Bestellung online, Abholung vor Ort.">
+<style>
+  :root {
+    --bg: #f6f3ea;
+    --fg: #23301f;
+    --muted: #5d6b55;
+    --accent: #3f7a3a;
+    --accent-fg: #ffffff;
+    --card: #ffffff;
+    --line: #ddd6c2;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1c2419;
+      --fg: #eef2e8;
+      --muted: #b6c2ab;
+      --accent: #8fc483;
+      --accent-fg: #1c2419;
+      --card: #252f22;
+      --line: #3a4737;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1c2419;
+    --fg: #eef2e8;
+    --muted: #b6c2ab;
+    --accent: #8fc483;
+    --accent-fg: #1c2419;
+    --card: #252f22;
+    --line: #3a4737;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    overflow-x: hidden;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; }
+  header.top { padding-block: 28px 8px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 16px; }
+  .brand { font-weight: 700; font-size: 1.1rem; letter-spacing: .02em; }
+  .brand span { color: var(--muted); font-weight: 400; }
+  nav a { color: var(--muted); text-decoration: none; margin-left: 16px; font-size: .95rem; }
+  nav a:hover { color: var(--accent); }
+  .hero { padding-block: 48px 40px; }
+  .kicker { text-transform: uppercase; letter-spacing: .14em; font-size: .8rem; color: var(--accent); font-weight: 600; margin: 0 0 12px; }
+  h1 { font-size: clamp(2rem, 6vw, 2.9rem); line-height: 1.15; margin: 0 0 16px; text-wrap: balance; }
+  .lead { font-size: 1.15rem; color: var(--muted); margin: 0 0 28px; max-width: 36em; }
+  .btn { display: inline-block; background: var(--accent); color: var(--accent-fg); text-decoration: none; padding: 14px 22px; border-radius: 10px; font-weight: 600; }
+  .btn:hover { filter: brightness(1.05); }
+  section { padding-block: 28px; border-top: 1px solid var(--line); }
+  h2 { font-size: 1.4rem; margin: 0 0 12px; }
+  p { margin: 0 0 14px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 18px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
+  .card h3 { margin: 0 0 6px; font-size: 1.05rem; }
+  .card p { margin: 0; color: var(--muted); font-size: .95rem; }
+  .steps { padding-left: 1.2em; margin: 0; }
+  .steps li { margin-bottom: 8px; }
+  .kontakt dl { display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; margin: 0; }
+  .kontakt dt { color: var(--muted); }
+  .kontakt dd { margin: 0; }
+  .kontakt a { color: var(--accent); }
+  footer { padding-block: 28px 40px; color: var(--muted); font-size: .9rem; border-top: 1px solid var(--line); }
+  footer a { color: var(--muted); }
+  .platzhalter { background: var(--card); border: 1px dashed var(--line); border-radius: 8px; padding: 10px 12px; color: var(--muted); font-size: .9rem; }
+  @media (max-width: 480px) { nav a { margin-left: 12px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div class="brand">WölzerTaler <span>· Naturgarten</span></div>
+    <nav>
+      <a href="#ueber">Über uns</a>
+      <a href="#bestellen">Bestellen</a>
+      <a href="#abholung">Abholung</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <p class="kicker">Niederwölz · Steiermark</p>
+    <h1>Frisches Gemüse aus unserem Naturgarten</h1>
+    <p class="lead">Wir bauen im Naturgarten an, was in unserer Region gut wächst. Ohne Chemie, mit Rücksicht auf den Boden und auf dich. Bestell online und hol dein Gemüse direkt bei uns ab.</p>
+    <a class="btn" href="#bestellen">Zur Bestellung</a>
+  </div>
+
+  <section id="ueber">
+    <h2>Über uns</h2>
+    <p>Der WölzerTaler ist ein kleiner Naturgarten in Niederwölz. Wir arbeiten mit der Natur, düngen mit eigener Gründüngung und Pflanzenkohle und pflanzen nach der Saison. Was wir ernten, verkaufen wir frisch an unsere Kunden.</p>
+    <div class="grid">
+      <div class="card"><h3>Saisonal</h3><p>Wir bieten an, was gerade reif ist.</p></div>
+      <div class="card"><h3>Ohne Chemie</h3><p>Natürlich gepflegt, mit Gründüngung und Mulch.</p></div>
+      <div class="card"><h3>Regional</h3><p>Direkt aus Niederwölz, ohne lange Wege.</p></div>
+    </div>
+  </section>
+
+  <section id="bestellen">
+    <h2>So bestellst du</h2>
+    <ol class="steps">
+      <li>Öffne unsere Bestellliste über den Button oder den QR-Code.</li>
+      <li>Wähle, was du möchtest, und die Menge.</li>
+      <li>Sende die Bestellung ab. Wir melden uns, sobald alles bereit ist.</li>
+    </ol>
+    <p style="margin-top:18px"><a class="btn" href="BESTELLSEITE_LINK_HIER_EINTRAGEN" target="_blank" rel="noopener">Bestellliste öffnen</a></p>
+  </section>
+
+  <section id="abholung">
+    <h2>Abholung</h2>
+    <p>Du holst deine Bestellung im Naturgarten in Niederwölz ab. Den genauen Weg zeigt dir der Kartenlink.</p>
+    <p><a href="https://maps.app.goo.gl/j7qypQ11bANTvcZV8" target="_blank" rel="noopener">Standort auf der Karte öffnen</a></p>
+  </section>
+
+  <section id="kontakt" class="kontakt">
+    <h2>Kontakt</h2>
+    <dl>
+      <dt>Ort</dt><dd>Niederwölz, Steiermark</dd>
+      <dt>Telefon</dt><dd><a href="tel:+436608743416">+43 660 8743416</a></dd>
+      <dt>WhatsApp</dt><dd><a href="https://wa.me/436608743416" target="_blank" rel="noopener">Nachricht schreiben</a></dd>
+    </dl>
+  </section>
+
+  <footer>
+    <p>© WölzerTaler · Naturgarten Niederwölz</p>
+    <p><a href="impressum.html">Impressum</a></p>
+  </footer>
+
+</div>
+</body>
+</html>
