@@ -2,144 +2,172 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>WölzerTaler · Naturgarten Niederwölz</title>
-<meta name="description" content="WölzerTaler – Naturgarten in Niederwölz, Steiermark. Frisches Gemüse aus dem Garten, Bestellung online, Abholung vor Ort.">
+<meta name="description" content="WölzerTaler – Naturgarten in Niederwölz, Steiermark. Frisches Gemüse, Bestellung online, Abholung am Hoftag.">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap">
 <style>
-  :root {
-    --bg: #f6f3ea;
-    --fg: #23301f;
-    --muted: #5d6b55;
-    --accent: #3f7a3a;
-    --accent-fg: #ffffff;
-    --card: #ffffff;
-    --line: #ddd6c2;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #1c2419;
-      --fg: #eef2e8;
-      --muted: #b6c2ab;
-      --accent: #8fc483;
-      --accent-fg: #1c2419;
-      --card: #252f22;
-      --line: #3a4737;
-      color-scheme: dark;
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg: #1c2419;
-    --fg: #eef2e8;
-    --muted: #b6c2ab;
-    --accent: #8fc483;
-    --accent-fg: #1c2419;
-    --card: #252f22;
-    --line: #3a4737;
-    color-scheme: dark;
-  }
-  * { box-sizing: border-box; }
-  html, body { margin: 0; }
-  body {
-    background: var(--bg);
-    color: var(--fg);
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    font-size: 17px;
-    line-height: 1.6;
-    padding-left: max(16px, env(safe-area-inset-left, 0px));
-    padding-right: max(16px, env(safe-area-inset-right, 0px));
-    overflow-x: hidden;
-  }
-  .wrap { max-width: 760px; margin: 0 auto; }
-  header.top { padding-block: 28px 8px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 16px; }
-  .brand { font-weight: 700; font-size: 1.1rem; letter-spacing: .02em; }
-  .brand span { color: var(--muted); font-weight: 400; }
-  nav a { color: var(--muted); text-decoration: none; margin-left: 16px; font-size: .95rem; }
-  nav a:hover { color: var(--accent); }
-  .hero { padding-block: 48px 40px; }
-  .kicker { text-transform: uppercase; letter-spacing: .14em; font-size: .8rem; color: var(--accent); font-weight: 600; margin: 0 0 12px; }
-  h1 { font-size: clamp(2rem, 6vw, 2.9rem); line-height: 1.15; margin: 0 0 16px; text-wrap: balance; }
-  .lead { font-size: 1.15rem; color: var(--muted); margin: 0 0 28px; max-width: 36em; }
-  .btn { display: inline-block; background: var(--accent); color: var(--accent-fg); text-decoration: none; padding: 14px 22px; border-radius: 10px; font-weight: 600; }
-  .btn:hover { filter: brightness(1.05); }
-  section { padding-block: 28px; border-top: 1px solid var(--line); }
-  h2 { font-size: 1.4rem; margin: 0 0 12px; }
-  p { margin: 0 0 14px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 18px; }
-  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
-  .card h3 { margin: 0 0 6px; font-size: 1.05rem; }
-  .card p { margin: 0; color: var(--muted); font-size: .95rem; }
-  .steps { padding-left: 1.2em; margin: 0; }
-  .steps li { margin-bottom: 8px; }
-  .kontakt dl { display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; margin: 0; }
-  .kontakt dt { color: var(--muted); }
-  .kontakt dd { margin: 0; }
-  .kontakt a { color: var(--accent); }
-  footer { padding-block: 28px 40px; color: var(--muted); font-size: .9rem; border-top: 1px solid var(--line); }
-  footer a { color: var(--muted); }
-  .platzhalter { background: var(--card); border: 1px dashed var(--line); border-radius: 8px; padding: 10px 12px; color: var(--muted); font-size: .9rem; }
-  @media (max-width: 480px) { nav a { margin-left: 12px; } }
+html,body{overflow-x:hidden}
+body{margin:0}
+a{color:#4f7a33;text-underline-offset:4px}
+a:hover{color:#2f5a1c}
+.serif{font-family:Fraunces,Georgia,serif}
+.btn{display:inline-block;background:#2f5a1c;color:#f7f1e3;text-decoration:none;padding:16px 28px;border-radius:999px;font-weight:600;font-family:Inter,system-ui,sans-serif;font-size:16px;transition:background .2s}
+.btn:hover{background:#4f7a33;color:#f7f1e3}
+.btn-ghost{color:#2f5a1c;font-weight:600;text-decoration:none;border-bottom:1.5px solid #c8642a;padding-bottom:2px}
+@media (max-width:760px){
+.two{grid-template-columns:1fr!important;gap:28px!important}
+.hero-art{order:-1;height:260px!important}
+.three{grid-template-columns:1fr!important}
+}
 </style>
+
 </head>
-<body>
-<div class="wrap">
+<body style="margin:0;background:#f7f1e3">
+<div style="box-sizing:border-box;width:100%;background:#f7f1e3;color:#2b3523;font-family:Inter,system-ui,sans-serif;font-size:17px;line-height:1.65">
+  <div style="max-width:1040px;margin:0 auto;padding:0 20px">
 
-  <header class="top">
-    <div class="brand">WölzerTaler <span>· Naturgarten</span></div>
-    <nav>
-      <a href="#ueber">Über uns</a>
-      <a href="#bestellen">Bestellen</a>
-      <a href="#abholung">Abholung</a>
-      <a href="#kontakt">Kontakt</a>
-    </nav>
-  </header>
+    <header style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px 16px;padding:28px 0">
+      <div class="serif" style="font-size:1.35rem;font-weight:600;color:#2f5a1c">WölzerTaler</div>
+      <nav style="display:flex;flex-wrap:wrap;gap:6px 22px;font-size:15px">
+        <a href="#saison" style="color:#5d6450;text-decoration:none">Saison</a>
+        <a href="#bestellen" style="color:#5d6450;text-decoration:none">Bestellen</a>
+        <a href="#abholung" style="color:#5d6450;text-decoration:none">Hoftag</a>
+        <a href="#kontakt" style="color:#5d6450;text-decoration:none">Kontakt</a>
+      </nav>
+    </header>
 
-  <div class="hero">
-    <p class="kicker">Niederwölz · Steiermark</p>
-    <h1>Frisches Gemüse aus unserem Naturgarten</h1>
-    <p class="lead">Wir bauen im Naturgarten an, was in unserer Region gut wächst. Ohne Chemie, mit Rücksicht auf den Boden und auf dich. Bestell online und hol dein Gemüse direkt bei uns ab.</p>
-    <a class="btn" href="#bestellen">Zur Bestellung</a>
+    <div class="two" style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:center;padding:48px 0 72px">
+      <div>
+        <p style="text-transform:uppercase;letter-spacing:.18em;font-size:12px;color:#c8642a;font-weight:600;margin:0 0 18px">Naturgarten · Niederwölz</p>
+        <h1 class="serif" style="font-size:clamp(2.6rem,6.5vw,4.2rem);line-height:1.04;font-weight:400;margin:0 0 22px;text-wrap:balance;color:#2f5a1c">Gemüse, so frisch <em style="color:#c8642a">wie der Morgen</em>.</h1>
+        <p style="font-size:1.12rem;color:#5d6450;margin:0 0 34px;max-width:30em">Wir bauen im Naturgarten an, was in unserer Region gut wächst. Ohne Chemie, mit Rücksicht auf Boden und Mensch. Bestell online und hol dein Gemüse am Hoftag bei uns ab.</p>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:20px">
+          <a class="btn" href="#bestellen">Jetzt bestellen</a>
+          <a class="btn-ghost" href="#saison">Was gerade wächst</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true" style="height:420px;background:#e7efd6;border-radius:28px;overflow:hidden;padding:24px 16px 0;box-sizing:border-box"><svg aria-hidden="true" viewBox="0 0 190 150" width="100%" height="100%" preserveAspectRatio="xMidYMax meet"><circle cx="140" cy="44" r="26" fill="#f4c95d"/><g stroke="#f4c95d" stroke-width="3" stroke-linecap="round"><path d="M140 6v8"/><path d="M178 44h-8"/><path d="M167 17l-6 6"/><path d="M113 17l6 6"/></g><path d="M0 150 C40 112 90 118 190 104 L190 150Z" fill="#c9dcaa"/><g><circle cx="44" cy="120" r="15" fill="#6c9a45"/><circle cx="34" cy="116" r="9" fill="#82ad55"/><circle cx="54" cy="115" r="9" fill="#82ad55"/><circle cx="44" cy="112" r="10" fill="#a9cc6f"/><circle cx="44" cy="114" r="5" fill="#c9e08f"/><path d="M77 100 C70 88 66 84 64 78 M80 100 C80 88 81 82 80 74 M83 100 C88 89 92 85 96 80" stroke="#4f7a33" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M72 100 L88 100 L81 134 Z" fill="#e8812f"/><path d="M75 108h7M77 116h6M78 124h4" stroke="#b85f1c" stroke-width="1.6" stroke-linecap="round"/><path d="M112 98 C106 90 104 86 106 82 C111 85 113 90 113 98Z" fill="#6c9a45"/><path d="M116 98 C120 89 124 86 128 86 C127 92 122 96 116 98Z" fill="#82ad55"/><circle cx="114" cy="108" r="10" fill="#c93a4a"/><path d="M110 115 C112 120 114 124 114 130 C115 124 117 120 119 115Z" fill="#f3ead8"/><circle cx="110" cy="104" r="2.5" fill="#fff" opacity=".45"/><path d="M148 92 C144 80 140 74 134 70 M153 92 C154 80 156 72 160 66 M158 94 C164 84 170 80 176 80" stroke="#8fb36a" stroke-width="2.6" fill="none" stroke-linecap="round"/><ellipse cx="134" cy="69" rx="6" ry="4" fill="#82ad55" transform="rotate(-30 134 69)"/><ellipse cx="160" cy="65" rx="6" ry="4" fill="#6c9a45" transform="rotate(-70 160 65)"/><ellipse cx="177" cy="79" rx="6" ry="4" fill="#82ad55"/><ellipse cx="154" cy="104" rx="15" ry="13" fill="#c6dc9a"/><path d="M142 104 l5 -4 M160 109 l5 -3 M152 96 l3 -4" stroke="#8fb36a" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M154 117 v7" stroke="#b9a37c" stroke-width="1.8" stroke-linecap="round"/></g></svg></div>
+    </div>
+
+    <div aria-hidden="true" style="display:flex;align-items:center;gap:16px;color:#c9b98f"><div style="flex:1;height:1px;background:#e3d8bf"></div><svg width="84" height="20" viewBox="0 0 84 20" fill="none" stroke-linecap="round"><path d="M10 4 L14 4 L12 17 Z" fill="#e8812f" stroke="none"/><path d="M12 4 C10 1 9 0 8 0 M12 4 C12 1 12 0 12 -1 M12 4 C14 1 15 0 16 0" stroke="#4f7a33" stroke-width="1.6"/><circle cx="42" cy="11" r="5" fill="#c93a4a"/><path d="M42 6 C40 3 39 2 39 1 M42 6 C44 3 45 2 46 2" stroke="#4f7a33" stroke-width="1.6"/><circle cx="72" cy="11" r="6" fill="#a9cc6f"/><circle cx="72" cy="11" r="3" fill="#c9e08f"/></svg><div style="flex:1;height:1px;background:#e3d8bf"></div></div>
+
+    <section id="ueber" style="padding:56px 0 72px">
+      <div class="two" style="display:grid;grid-template-columns:1fr 1.4fr;gap:48px">
+        <h2 class="serif" style="font-size:2rem;font-weight:400;margin:0;color:#2f5a1c;line-height:1.15">Über uns</h2>
+        <div>
+          <p style="font-size:1.1rem;margin:0 0 18px">Der WölzerTaler ist ein kleiner Naturgarten in Niederwölz. Wir arbeiten mit der Natur, düngen mit eigener Gründüngung und Pflanzenkohle und pflanzen nach der Saison.</p>
+          <p style="margin:0 0 32px;color:#5d6450">Was wir ernten, verkaufen wir frisch an unsere Kunden. Das schmeckt man.</p>
+          <figure style="margin:0;padding:24px 28px;border-radius:18px;background:#fffdf7;border:1px solid #e3d8bf">
+            <blockquote class="serif" style="margin:0 0 12px;font-size:1.35rem;line-height:1.4;font-style:italic;color:#2f5a1c">„[Dein Satz: zum Beispiel, warum du ohne Chemie arbeitest]“</blockquote>
+            <figcaption style="font-size:14px;color:#5d6450">Werner Hansmann, Gärtner</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="three" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:48px">
+        <div style="aspect-ratio:4/3;max-width:100%;border-radius:18px;background:#ece4cf;border:1px dashed #cdbf9c;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;color:#7a7360;font-size:14px">[Foto: Beete im Morgenlicht]</div>
+        <div style="aspect-ratio:4/3;max-width:100%;border-radius:18px;background:#ece4cf;border:1px dashed #cdbf9c;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;color:#7a7360;font-size:14px">[Foto: Kiste mit frischer Ernte]</div>
+        <div style="aspect-ratio:4/3;max-width:100%;border-radius:18px;background:#ece4cf;border:1px dashed #cdbf9c;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;color:#7a7360;font-size:14px">[Foto: Werner bei der Arbeit]</div>
+      </div>
+    </section>
+
+    <div aria-hidden="true" style="display:flex;align-items:center;gap:16px;color:#c9b98f"><div style="flex:1;height:1px;background:#e3d8bf"></div><svg width="84" height="20" viewBox="0 0 84 20" fill="none" stroke-linecap="round"><path d="M10 4 L14 4 L12 17 Z" fill="#e8812f" stroke="none"/><path d="M12 4 C10 1 9 0 8 0 M12 4 C12 1 12 0 12 -1 M12 4 C14 1 15 0 16 0" stroke="#4f7a33" stroke-width="1.6"/><circle cx="42" cy="11" r="5" fill="#c93a4a"/><path d="M42 6 C40 3 39 2 39 1 M42 6 C44 3 45 2 46 2" stroke="#4f7a33" stroke-width="1.6"/><circle cx="72" cy="11" r="6" fill="#a9cc6f"/><circle cx="72" cy="11" r="3" fill="#c9e08f"/></svg><div style="flex:1;height:1px;background:#e3d8bf"></div></div>
+
+    <section id="saison" style="padding:56px 0 72px">
+      <h2 class="serif" style="font-size:2rem;font-weight:400;margin:0 0 10px;color:#2f5a1c">Das wächst bei uns</h2>
+      <p id="saisonText" style="margin:0 0 36px;color:#5d6450;max-width:34em"></p>
+      <div id="saisonGrid" class="three" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px"></div>
+    </section>
+
+    <div aria-hidden="true" style="display:flex;align-items:center;gap:16px;color:#c9b98f"><div style="flex:1;height:1px;background:#e3d8bf"></div><svg width="84" height="20" viewBox="0 0 84 20" fill="none" stroke-linecap="round"><path d="M10 4 L14 4 L12 17 Z" fill="#e8812f" stroke="none"/><path d="M12 4 C10 1 9 0 8 0 M12 4 C12 1 12 0 12 -1 M12 4 C14 1 15 0 16 0" stroke="#4f7a33" stroke-width="1.6"/><circle cx="42" cy="11" r="5" fill="#c93a4a"/><path d="M42 6 C40 3 39 2 39 1 M42 6 C44 3 45 2 46 2" stroke="#4f7a33" stroke-width="1.6"/><circle cx="72" cy="11" r="6" fill="#a9cc6f"/><circle cx="72" cy="11" r="3" fill="#c9e08f"/></svg><div style="flex:1;height:1px;background:#e3d8bf"></div></div>
+
+    <section id="bestellen" style="padding:56px 0 72px">
+      <div class="two" style="display:grid;grid-template-columns:1.3fr 0.7fr;gap:48px;align-items:center">
+        <div>
+          <h2 class="serif" style="font-size:2rem;font-weight:400;margin:0 0 32px;color:#2f5a1c">So bestellst du</h2>
+          <div style="display:flex;flex-direction:column;gap:20px">
+            <div style="display:flex;gap:18px;align-items:baseline"><span class="serif" style="font-size:2rem;color:#c8642a;line-height:1;min-width:24px">1</span><p style="margin:0">Öffne unsere Bestellliste über den Button oder scanne den QR-Code mit dem Handy.</p></div>
+            <div style="display:flex;gap:18px;align-items:baseline"><span class="serif" style="font-size:2rem;color:#c8642a;line-height:1;min-width:24px">2</span><p style="margin:0">Wähle, was du möchtest, und die Menge.</p></div>
+            <div style="display:flex;gap:18px;align-items:baseline"><span class="serif" style="font-size:2rem;color:#c8642a;line-height:1;min-width:24px">3</span><p style="margin:0">Sende die Bestellung ab und hol sie am Mittwoch beim Hoftag ab.</p></div>
+          </div>
+          <p style="margin:36px 0 0"><a class="btn" href="https://claude.ai/artifact/VcKrP5PKt9QatB4XSYHBgU" target="_blank" rel="noopener">Bestellliste öffnen</a></p>
+        </div>
+        <div style="background:#fffdf7;border:1px solid #e3d8bf;border-radius:22px;padding:22px;text-align:center;max-width:280px;width:100%;box-sizing:border-box;justify-self:center">
+          <div style="width:100%;aspect-ratio:1/1"><svg viewBox="0 0 41 41" width="100%" height="100%" role="img" aria-label="QR-Code zur Bestellliste" shape-rendering="crispEdges"><rect width="41" height="41" fill="#ffffff"/><path d="M4 4h1v1h-1zM5 4h1v1h-1zM6 4h1v1h-1zM7 4h1v1h-1zM8 4h1v1h-1zM9 4h1v1h-1zM10 4h1v1h-1zM13 4h1v1h-1zM16 4h1v1h-1zM18 4h1v1h-1zM22 4h1v1h-1zM23 4h1v1h-1zM25 4h1v1h-1zM26 4h1v1h-1zM27 4h1v1h-1zM30 4h1v1h-1zM31 4h1v1h-1zM32 4h1v1h-1zM33 4h1v1h-1zM34 4h1v1h-1zM35 4h1v1h-1zM36 4h1v1h-1zM4 5h1v1h-1zM10 5h1v1h-1zM12 5h1v1h-1zM17 5h1v1h-1zM19 5h1v1h-1zM20 5h1v1h-1zM21 5h1v1h-1zM23 5h1v1h-1zM25 5h1v1h-1zM27 5h1v1h-1zM30 5h1v1h-1zM36 5h1v1h-1zM4 6h1v1h-1zM6 6h1v1h-1zM7 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM13 6h1v1h-1zM15 6h1v1h-1zM19 6h1v1h-1zM20 6h1v1h-1zM30 6h1v1h-1zM32 6h1v1h-1zM33 6h1v1h-1zM34 6h1v1h-1zM36 6h1v1h-1zM4 7h1v1h-1zM6 7h1v1h-1zM7 7h1v1h-1zM8 7h1v1h-1zM10 7h1v1h-1zM16 7h1v1h-1zM17 7h1v1h-1zM19 7h1v1h-1zM21 7h1v1h-1zM23 7h1v1h-1zM25 7h1v1h-1zM26 7h1v1h-1zM27 7h1v1h-1zM28 7h1v1h-1zM30 7h1v1h-1zM32 7h1v1h-1zM33 7h1v1h-1zM34 7h1v1h-1zM36 7h1v1h-1zM4 8h1v1h-1zM6 8h1v1h-1zM7 8h1v1h-1zM8 8h1v1h-1zM10 8h1v1h-1zM12 8h1v1h-1zM15 8h1v1h-1zM17 8h1v1h-1zM21 8h1v1h-1zM26 8h1v1h-1zM30 8h1v1h-1zM32 8h1v1h-1zM33 8h1v1h-1zM34 8h1v1h-1zM36 8h1v1h-1zM4 9h1v1h-1zM10 9h1v1h-1zM14 9h1v1h-1zM21 9h1v1h-1zM25 9h1v1h-1zM26 9h1v1h-1zM27 9h1v1h-1zM28 9h1v1h-1zM30 9h1v1h-1zM36 9h1v1h-1zM4 10h1v1h-1zM5 10h1v1h-1zM6 10h1v1h-1zM7 10h1v1h-1zM8 10h1v1h-1zM9 10h1v1h-1zM10 10h1v1h-1zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM18 10h1v1h-1zM20 10h1v1h-1zM22 10h1v1h-1zM24 10h1v1h-1zM26 10h1v1h-1zM28 10h1v1h-1zM30 10h1v1h-1zM31 10h1v1h-1zM32 10h1v1h-1zM33 10h1v1h-1zM34 10h1v1h-1zM35 10h1v1h-1zM36 10h1v1h-1zM16 11h1v1h-1zM17 11h1v1h-1zM18 11h1v1h-1zM20 11h1v1h-1zM21 11h1v1h-1zM22 11h1v1h-1zM24 11h1v1h-1zM25 11h1v1h-1zM26 11h1v1h-1zM4 12h1v1h-1zM6 12h1v1h-1zM8 12h1v1h-1zM10 12h1v1h-1zM13 12h1v1h-1zM17 12h1v1h-1zM19 12h1v1h-1zM20 12h1v1h-1zM21 12h1v1h-1zM23 12h1v1h-1zM25 12h1v1h-1zM26 12h1v1h-1zM28 12h1v1h-1zM32 12h1v1h-1zM35 12h1v1h-1zM6 13h1v1h-1zM8 13h1v1h-1zM11 13h1v1h-1zM14 13h1v1h-1zM15 13h1v1h-1zM16 13h1v1h-1zM18 13h1v1h-1zM20 13h1v1h-1zM24 13h1v1h-1zM28 13h1v1h-1zM29 13h1v1h-1zM30 13h1v1h-1zM31 13h1v1h-1zM4 14h1v1h-1zM6 14h1v1h-1zM7 14h1v1h-1zM9 14h1v1h-1zM10 14h1v1h-1zM11 14h1v1h-1zM12 14h1v1h-1zM14 14h1v1h-1zM15 14h1v1h-1zM16 14h1v1h-1zM17 14h1v1h-1zM20 14h1v1h-1zM21 14h1v1h-1zM24 14h1v1h-1zM26 14h1v1h-1zM30 14h1v1h-1zM31 14h1v1h-1zM34 14h1v1h-1zM35 14h1v1h-1zM36 14h1v1h-1zM4 15h1v1h-1zM6 15h1v1h-1zM7 15h1v1h-1zM9 15h1v1h-1zM11 15h1v1h-1zM13 15h1v1h-1zM14 15h1v1h-1zM15 15h1v1h-1zM20 15h1v1h-1zM25 15h1v1h-1zM27 15h1v1h-1zM28 15h1v1h-1zM32 15h1v1h-1zM6 16h1v1h-1zM8 16h1v1h-1zM10 16h1v1h-1zM29 16h1v1h-1zM30 16h1v1h-1zM33 16h1v1h-1zM35 16h1v1h-1zM36 16h1v1h-1zM7 17h1v1h-1zM8 17h1v1h-1zM9 17h1v1h-1zM12 17h1v1h-1zM14 17h1v1h-1zM17 17h1v1h-1zM19 17h1v1h-1zM21 17h1v1h-1zM23 17h1v1h-1zM27 17h1v1h-1zM28 17h1v1h-1zM30 17h1v1h-1zM33 17h1v1h-1zM36 17h1v1h-1zM4 18h1v1h-1zM5 18h1v1h-1zM6 18h1v1h-1zM7 18h1v1h-1zM8 18h1v1h-1zM9 18h1v1h-1zM10 18h1v1h-1zM11 18h1v1h-1zM12 18h1v1h-1zM16 18h1v1h-1zM21 18h1v1h-1zM25 18h1v1h-1zM28 18h1v1h-1zM29 18h1v1h-1zM31 18h1v1h-1zM32 18h1v1h-1zM34 18h1v1h-1zM35 18h1v1h-1zM36 18h1v1h-1zM6 19h1v1h-1zM9 19h1v1h-1zM11 19h1v1h-1zM14 19h1v1h-1zM16 19h1v1h-1zM18 19h1v1h-1zM19 19h1v1h-1zM21 19h1v1h-1zM23 19h1v1h-1zM25 19h1v1h-1zM27 19h1v1h-1zM30 19h1v1h-1zM31 19h1v1h-1zM35 19h1v1h-1zM4 20h1v1h-1zM5 20h1v1h-1zM10 20h1v1h-1zM11 20h1v1h-1zM14 20h1v1h-1zM15 20h1v1h-1zM16 20h1v1h-1zM21 20h1v1h-1zM25 20h1v1h-1zM27 20h1v1h-1zM29 20h1v1h-1zM30 20h1v1h-1zM34 20h1v1h-1zM4 21h1v1h-1zM6 21h1v1h-1zM7 21h1v1h-1zM9 21h1v1h-1zM11 21h1v1h-1zM13 21h1v1h-1zM15 21h1v1h-1zM16 21h1v1h-1zM17 21h1v1h-1zM19 21h1v1h-1zM20 21h1v1h-1zM21 21h1v1h-1zM24 21h1v1h-1zM25 21h1v1h-1zM28 21h1v1h-1zM29 21h1v1h-1zM30 21h1v1h-1zM31 21h1v1h-1zM36 21h1v1h-1zM6 22h1v1h-1zM9 22h1v1h-1zM10 22h1v1h-1zM14 22h1v1h-1zM22 22h1v1h-1zM25 22h1v1h-1zM26 22h1v1h-1zM29 22h1v1h-1zM30 22h1v1h-1zM34 22h1v1h-1zM36 22h1v1h-1zM6 23h1v1h-1zM8 23h1v1h-1zM11 23h1v1h-1zM13 23h1v1h-1zM14 23h1v1h-1zM16 23h1v1h-1zM17 23h1v1h-1zM18 23h1v1h-1zM20 23h1v1h-1zM21 23h1v1h-1zM22 23h1v1h-1zM23 23h1v1h-1zM25 23h1v1h-1zM27 23h1v1h-1zM29 23h1v1h-1zM31 23h1v1h-1zM32 23h1v1h-1zM35 23h1v1h-1zM5 24h1v1h-1zM8 24h1v1h-1zM10 24h1v1h-1zM11 24h1v1h-1zM13 24h1v1h-1zM14 24h1v1h-1zM17 24h1v1h-1zM19 24h1v1h-1zM20 24h1v1h-1zM22 24h1v1h-1zM24 24h1v1h-1zM25 24h1v1h-1zM29 24h1v1h-1zM30 24h1v1h-1zM31 24h1v1h-1zM32 24h1v1h-1zM33 24h1v1h-1zM36 24h1v1h-1zM13 25h1v1h-1zM14 25h1v1h-1zM19 25h1v1h-1zM20 25h1v1h-1zM21 25h1v1h-1zM22 25h1v1h-1zM23 25h1v1h-1zM24 25h1v1h-1zM25 25h1v1h-1zM27 25h1v1h-1zM28 25h1v1h-1zM29 25h1v1h-1zM33 25h1v1h-1zM34 25h1v1h-1zM35 25h1v1h-1zM36 25h1v1h-1zM4 26h1v1h-1zM6 26h1v1h-1zM7 26h1v1h-1zM8 26h1v1h-1zM10 26h1v1h-1zM11 26h1v1h-1zM14 26h1v1h-1zM15 26h1v1h-1zM16 26h1v1h-1zM17 26h1v1h-1zM18 26h1v1h-1zM19 26h1v1h-1zM20 26h1v1h-1zM22 26h1v1h-1zM23 26h1v1h-1zM24 26h1v1h-1zM26 26h1v1h-1zM28 26h1v1h-1zM30 26h1v1h-1zM31 26h1v1h-1zM32 26h1v1h-1zM33 26h1v1h-1zM35 26h1v1h-1zM36 26h1v1h-1zM5 27h1v1h-1zM6 27h1v1h-1zM7 27h1v1h-1zM9 27h1v1h-1zM14 27h1v1h-1zM15 27h1v1h-1zM17 27h1v1h-1zM20 27h1v1h-1zM21 27h1v1h-1zM22 27h1v1h-1zM24 27h1v1h-1zM25 27h1v1h-1zM26 27h1v1h-1zM27 27h1v1h-1zM28 27h1v1h-1zM30 27h1v1h-1zM31 27h1v1h-1zM32 27h1v1h-1zM4 28h1v1h-1zM6 28h1v1h-1zM8 28h1v1h-1zM10 28h1v1h-1zM11 28h1v1h-1zM13 28h1v1h-1zM14 28h1v1h-1zM17 28h1v1h-1zM18 28h1v1h-1zM19 28h1v1h-1zM20 28h1v1h-1zM21 28h1v1h-1zM23 28h1v1h-1zM24 28h1v1h-1zM25 28h1v1h-1zM28 28h1v1h-1zM29 28h1v1h-1zM30 28h1v1h-1zM31 28h1v1h-1zM32 28h1v1h-1zM33 28h1v1h-1zM36 28h1v1h-1zM12 29h1v1h-1zM15 29h1v1h-1zM16 29h1v1h-1zM17 29h1v1h-1zM24 29h1v1h-1zM25 29h1v1h-1zM27 29h1v1h-1zM28 29h1v1h-1zM32 29h1v1h-1zM33 29h1v1h-1zM4 30h1v1h-1zM5 30h1v1h-1zM6 30h1v1h-1zM7 30h1v1h-1zM8 30h1v1h-1zM9 30h1v1h-1zM10 30h1v1h-1zM14 30h1v1h-1zM17 30h1v1h-1zM20 30h1v1h-1zM21 30h1v1h-1zM25 30h1v1h-1zM27 30h1v1h-1zM28 30h1v1h-1zM30 30h1v1h-1zM32 30h1v1h-1zM34 30h1v1h-1zM35 30h1v1h-1zM36 30h1v1h-1zM4 31h1v1h-1zM10 31h1v1h-1zM13 31h1v1h-1zM14 31h1v1h-1zM16 31h1v1h-1zM17 31h1v1h-1zM19 31h1v1h-1zM20 31h1v1h-1zM24 31h1v1h-1zM25 31h1v1h-1zM26 31h1v1h-1zM28 31h1v1h-1zM32 31h1v1h-1zM35 31h1v1h-1zM36 31h1v1h-1zM4 32h1v1h-1zM6 32h1v1h-1zM7 32h1v1h-1zM8 32h1v1h-1zM10 32h1v1h-1zM12 32h1v1h-1zM13 32h1v1h-1zM14 32h1v1h-1zM15 32h1v1h-1zM17 32h1v1h-1zM23 32h1v1h-1zM24 32h1v1h-1zM28 32h1v1h-1zM29 32h1v1h-1zM30 32h1v1h-1zM31 32h1v1h-1zM32 32h1v1h-1zM33 32h1v1h-1zM36 32h1v1h-1zM4 33h1v1h-1zM6 33h1v1h-1zM7 33h1v1h-1zM8 33h1v1h-1zM10 33h1v1h-1zM16 33h1v1h-1zM19 33h1v1h-1zM21 33h1v1h-1zM23 33h1v1h-1zM26 33h1v1h-1zM27 33h1v1h-1zM32 33h1v1h-1zM36 33h1v1h-1zM4 34h1v1h-1zM6 34h1v1h-1zM7 34h1v1h-1zM8 34h1v1h-1zM10 34h1v1h-1zM12 34h1v1h-1zM13 34h1v1h-1zM14 34h1v1h-1zM16 34h1v1h-1zM21 34h1v1h-1zM22 34h1v1h-1zM26 34h1v1h-1zM27 34h1v1h-1zM32 34h1v1h-1zM34 34h1v1h-1zM36 34h1v1h-1zM4 35h1v1h-1zM10 35h1v1h-1zM17 35h1v1h-1zM19 35h1v1h-1zM21 35h1v1h-1zM22 35h1v1h-1zM23 35h1v1h-1zM24 35h1v1h-1zM25 35h1v1h-1zM26 35h1v1h-1zM28 35h1v1h-1zM29 35h1v1h-1zM32 35h1v1h-1zM33 35h1v1h-1zM35 35h1v1h-1zM4 36h1v1h-1zM5 36h1v1h-1zM6 36h1v1h-1zM7 36h1v1h-1zM8 36h1v1h-1zM9 36h1v1h-1zM10 36h1v1h-1zM12 36h1v1h-1zM15 36h1v1h-1zM21 36h1v1h-1zM24 36h1v1h-1zM25 36h1v1h-1zM26 36h1v1h-1zM28 36h1v1h-1zM32 36h1v1h-1zM33 36h1v1h-1zM35 36h1v1h-1zM36 36h1v1h-1z" fill="#2b3523"/></svg></div>
+          <p style="margin:12px 0 0;font-size:14px;color:#5d6450">Mit dem Handy scannen</p>
+        </div>
+      </div>
+    </section>
+
+    <div aria-hidden="true" style="display:flex;align-items:center;gap:16px;color:#c9b98f"><div style="flex:1;height:1px;background:#e3d8bf"></div><svg width="84" height="20" viewBox="0 0 84 20" fill="none" stroke-linecap="round"><path d="M10 4 L14 4 L12 17 Z" fill="#e8812f" stroke="none"/><path d="M12 4 C10 1 9 0 8 0 M12 4 C12 1 12 0 12 -1 M12 4 C14 1 15 0 16 0" stroke="#4f7a33" stroke-width="1.6"/><circle cx="42" cy="11" r="5" fill="#c93a4a"/><path d="M42 6 C40 3 39 2 39 1 M42 6 C44 3 45 2 46 2" stroke="#4f7a33" stroke-width="1.6"/><circle cx="72" cy="11" r="6" fill="#a9cc6f"/><circle cx="72" cy="11" r="3" fill="#c9e08f"/></svg><div style="flex:1;height:1px;background:#e3d8bf"></div></div>
+
+    <section id="abholung" style="padding:56px 0 72px">
+      <div class="two" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center">
+        <div>
+          <h2 class="serif" style="font-size:2rem;font-weight:400;margin:0 0 16px;color:#2f5a1c">Abholung am Hoftag</h2>
+          <p style="margin:0 0 22px;color:#5d6450">Deine Bestellung liegt jeden Mittwoch für dich bereit. Komm vorbei, hol dein Gemüse ab und schau dir den Garten an.</p>
+          <a href="https://maps.app.goo.gl/j7qypQ11bANTvcZV8" target="_blank" rel="noopener" class="btn-ghost">Standort auf der Karte</a>
+        </div>
+        <div style="padding:32px;border-radius:22px;background:#2f5a1c;color:#f7f1e3">
+          <p style="text-transform:uppercase;letter-spacing:.16em;font-size:12px;color:#f4c95d;font-weight:600;margin:0 0 10px">Hoftag</p>
+          <p class="serif" style="font-size:2.2rem;line-height:1.1;margin:0 0 6px">Mittwoch</p>
+          <p class="serif" style="font-size:1.5rem;margin:0 0 18px;color:#c9dcaa">9 bis 13 Uhr</p>
+          <p style="margin:0;color:#c9dcaa;font-size:15px">Hinterbichl 110 · 8831 Niederwölz</p>
+        </div>
+      </div>
+    </section>
+
+    <div aria-hidden="true" style="display:flex;align-items:center;gap:16px;color:#c9b98f"><div style="flex:1;height:1px;background:#e3d8bf"></div><svg width="84" height="20" viewBox="0 0 84 20" fill="none" stroke-linecap="round"><path d="M10 4 L14 4 L12 17 Z" fill="#e8812f" stroke="none"/><path d="M12 4 C10 1 9 0 8 0 M12 4 C12 1 12 0 12 -1 M12 4 C14 1 15 0 16 0" stroke="#4f7a33" stroke-width="1.6"/><circle cx="42" cy="11" r="5" fill="#c93a4a"/><path d="M42 6 C40 3 39 2 39 1 M42 6 C44 3 45 2 46 2" stroke="#4f7a33" stroke-width="1.6"/><circle cx="72" cy="11" r="6" fill="#a9cc6f"/><circle cx="72" cy="11" r="3" fill="#c9e08f"/></svg><div style="flex:1;height:1px;background:#e3d8bf"></div></div>
+
+    <section id="kontakt" style="padding:56px 0 72px">
+      <h2 class="serif" style="font-size:2rem;font-weight:400;margin:0 0 24px;color:#2f5a1c">Kontakt</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:14px">
+        <a class="btn" href="tel:+436608743416">Anrufen</a>
+        <a class="btn" href="https://wa.me/436608743416" target="_blank" rel="noopener" style="background:#fffdf7;color:#2f5a1c;border:1px solid #cdbf9c">WhatsApp</a>
+      </div>
+      <p style="margin:20px 0 0;color:#5d6450">+43 660 8743416 · dablju.hansmann@gmail.com</p>
+    </section>
   </div>
 
-  <section id="ueber">
-    <h2>Über uns</h2>
-    <p>Der WölzerTaler ist ein kleiner Naturgarten in Niederwölz. Wir arbeiten mit der Natur, düngen mit eigener Gründüngung und Pflanzenkohle und pflanzen nach der Saison. Was wir ernten, verkaufen wir frisch an unsere Kunden.</p>
-    <div class="grid">
-      <div class="card"><h3>Saisonal</h3><p>Wir bieten an, was gerade reif ist.</p></div>
-      <div class="card"><h3>Ohne Chemie</h3><p>Natürlich gepflegt, mit Gründüngung und Mulch.</p></div>
-      <div class="card"><h3>Regional</h3><p>Direkt aus Niederwölz, ohne lange Wege.</p></div>
+  <footer style="background:#2f5a1c;color:#c9dcaa;font-size:14px">
+    <div style="max-width:1040px;margin:0 auto;padding:40px 20px 48px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px">
+      <div>
+        <div class="serif" style="font-size:1.3rem;color:#f7f1e3;margin-bottom:4px">WölzerTaler</div>
+        <span>Naturgarten · Niederwölz</span>
+      </div>
+      <a href="impressum.html" style="color:#c9dcaa">Impressum</a>
     </div>
-  </section>
-
-  <section id="bestellen">
-    <h2>So bestellst du</h2>
-    <ol class="steps">
-      <li>Öffne unsere Bestellliste über den Button oder den QR-Code.</li>
-      <li>Wähle, was du möchtest, und die Menge.</li>
-      <li>Sende die Bestellung ab. Wir melden uns, sobald alles bereit ist.</li>
-    </ol>
-    <p style="margin-top:18px"><a class="btn" href="BESTELLSEITE_LINK_HIER_EINTRAGEN" target="_blank" rel="noopener">Bestellliste öffnen</a></p>
-  </section>
-
-  <section id="abholung">
-    <h2>Abholung</h2>
-    <p>Du holst deine Bestellung im Naturgarten in Niederwölz ab. Den genauen Weg zeigt dir der Kartenlink.</p>
-    <p><a href="https://maps.app.goo.gl/j7qypQ11bANTvcZV8" target="_blank" rel="noopener">Standort auf der Karte öffnen</a></p>
-  </section>
-
-  <section id="kontakt" class="kontakt">
-    <h2>Kontakt</h2>
-    <dl>
-      <dt>Ort</dt><dd>Niederwölz, Steiermark</dd>
-      <dt>Telefon</dt><dd><a href="tel:+436608743416">+43 660 8743416</a></dd>
-      <dt>WhatsApp</dt><dd><a href="https://wa.me/436608743416" target="_blank" rel="noopener">Nachricht schreiben</a></dd>
-    </dl>
-  </section>
-
-  <footer>
-    <p>© WölzerTaler · Naturgarten Niederwölz</p>
-    <p><a href="impressum.html">Impressum</a></p>
   </footer>
-
 </div>
+
+<script>
+(function(){
+  var m = new Date().getMonth() + 1;
+  var jetzt = (m>=3&&m<=5)?0:(m>=6&&m<=8)?1:(m>=9&&m<=11)?2:-1;
+  var daten = [
+    {name:'Frühling', gemuese:['Radieschen','Spinat','Kohlrabi','Pflücksalat','Rucola','Frühzwiebeln','Erbsen']},
+    {name:'Sommer', gemuese:['Gurken','Buschbohnen','Karotten','Mangold','Kopfsalat','Romanasalat','Erdbeeren']},
+    {name:'Herbst', gemuese:['Rote Rüben','Chinakohl','Endivie','Feldsalat','Asiasalate','Spinat','Karotten']}
+  ];
+  var txt = jetzt === -1 ? 'Im Winter ruht der Garten. Ab März gibt es wieder frisches Gemüse.' : 'Wir ernten, was gerade reif ist. Die aktuelle Saison ist hervorgehoben.';
+  document.getElementById('saisonText').textContent = txt;
+  var grid = document.getElementById('saisonGrid');
+  daten.forEach(function(s, i){
+    var an = i === jetzt;
+    var card = document.createElement('div');
+    card.style.cssText = an ? 'padding:26px;border-radius:20px;background:#2f5a1c;color:#f7f1e3;border:1px solid #2f5a1c' : 'padding:26px;border-radius:20px;background:#fffdf7;color:#2f5a1c;border:1px solid #e3d8bf';
+    var head = document.createElement('div');
+    head.style.cssText = 'display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:14px';
+    var h = document.createElement('h3'); h.className='serif'; h.style.cssText='margin:0;font-size:1.35rem;font-weight:400'; h.textContent = s.name; head.appendChild(h);
+    if (an) { var b = document.createElement('span'); b.style.cssText='font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:#f4c95d;color:#2b3523;padding:4px 10px;border-radius:999px'; b.textContent='Jetzt'; head.appendChild(b); }
+    card.appendChild(head);
+    var chips = document.createElement('div'); chips.style.cssText='display:flex;flex-wrap:wrap;gap:8px';
+    s.gemuese.forEach(function(g){ var c=document.createElement('span'); c.style.cssText = an ? 'font-size:14px;padding:5px 12px;border-radius:999px;background:#4f7a33;color:#f7f1e3' : 'font-size:14px;padding:5px 12px;border-radius:999px;background:#e7efd6;color:#2b3523'; c.textContent=g; chips.appendChild(c); });
+    card.appendChild(chips); grid.appendChild(card);
+  });
+})();
+</script>
 </body>
 </html>
