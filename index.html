@@ -4,171 +4,270 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>WölzerTaler · Naturgarten Niederwölz</title>
-<meta name="description" content="WölzerTaler – Naturgarten in Niederwölz, Steiermark. Frisches Gemüse, Bestellung online, Abholung am Hoftag.">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap">
+<meta name="description" content="Gemüse aus dem Naturgarten in Niederwölz. Online bestellen, am Mittwoch von 9 bis 13 Uhr abholen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Days+One&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-html,body{overflow-x:hidden}
-body{margin:0}
-a{color:#4f7a33;text-underline-offset:4px}
-a:hover{color:#2f5a1c}
-.serif{font-family:Fraunces,Georgia,serif}
-.btn{display:inline-block;background:#2f5a1c;color:#f7f1e3;text-decoration:none;padding:16px 28px;border-radius:999px;font-weight:600;font-family:Inter,system-ui,sans-serif;font-size:16px;transition:background .2s}
-.btn:hover{background:#4f7a33;color:#f7f1e3}
-.btn-ghost{color:#2f5a1c;font-weight:600;text-decoration:none;border-bottom:1.5px solid #c8642a;padding-bottom:2px}
-@media (max-width:760px){
-.two{grid-template-columns:1fr!important;gap:28px!important}
-.hero-art{order:-1;height:260px!important}
-.three{grid-template-columns:1fr!important}
+:root{
+  --ink:#1D2E17; --ink2:#2C4224; --ground:#F4F1E6; --card:#FFFFFF; --line:#E3DCC8;
+  --mut:#585C4C; --soft:#C9D3BC; --sun:#F2C14E; --leaf:#4E7A34;
+  --ease:cubic-bezier(0.23,1,0.32,1);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent;scroll-behavior:smooth}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:'Schibsted Grotesk',system-ui,sans-serif;font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.h{text-wrap:balance;font-family:'Days One',system-ui,sans-serif;font-weight:400;text-transform:uppercase;line-height:1.08;margin:0}
+.lbl{font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;margin:0}
+.eb{display:flex;align-items:center;gap:12px;margin:0 0 18px;font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase}
+.eb:before{content:"";width:16px;height:1px;background:currentColor}
+.mut{color:var(--mut)}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(32px,env(safe-area-inset-left,0px));padding-right:max(32px,env(safe-area-inset-right,0px))}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;font:600 16px/1.2 'Schibsted Grotesk',sans-serif;text-decoration:none;border:0;cursor:pointer;transition:transform 160ms var(--ease),background-color 160ms ease,box-shadow 160ms ease;touch-action:manipulation;user-select:none;-webkit-user-select:none}
+.btn:active{transform:scale(.97)}
+.bd{background:var(--ink);color:#FFFFFF}
+.bw{background:#FFFFFF;color:var(--ink)}
+.bs{background:var(--sun);color:var(--ink)}
+.bl{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.blk{display:flex;width:100%}
+
+/* Kopf */
+.top{background:var(--ink);color:#FFFFFF;font-size:14px}
+.top .wrap{display:flex;justify-content:space-between;gap:16px;padding-top:9px;padding-bottom:9px}
+.top a{color:#FFFFFF;text-decoration:none;font-weight:600;display:inline-block;padding:6px 0;margin:-6px 0}
+.hd{position:sticky;top:0;z-index:5;background:var(--ground);border-bottom:1px solid var(--ink)}
+.hd .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-top:12px;padding-bottom:12px}
+.logo{display:flex;align-items:center;gap:14px;text-decoration:none}
+.logo img{width:52px;height:52px;border-radius:50%}
+.logo span{font-family:'Days One',sans-serif;text-transform:uppercase;font-size:18px;line-height:1}
+.logo small{display:block;font:600 11px 'Schibsted Grotesk',sans-serif;letter-spacing:.16em;color:var(--mut);margin-top:5px}
+.nav{display:flex;gap:4px}
+.nav a{text-decoration:none;font-size:15px;font-weight:500;padding:12px 14px}
+.nav a.on{box-shadow:inset 0 -2px 0 var(--ink)}
+
+/* Abschnitte */
+section{scroll-margin-top:90px}
+.pad{padding-top:104px;padding-bottom:104px}
+.split{display:grid;grid-template-columns:5fr 7fr;gap:64px;align-items:start}
+.s48{grid-template-columns:4fr 8fr}
+.dark{background:var(--ink);color:#FFFFFF}
+.titelbild{width:100%;aspect-ratio:1408/768;background:#2C4224 url(bilder/titel.jpg) center/cover no-repeat}
+.dark .mut{color:var(--soft)}
+.white{background:#FFFFFF;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tick{background:var(--ink2);color:#FFFFFF;overflow:hidden;padding:16px 0;white-space:nowrap}
+.tick .t{display:flex;width:max-content;animation:tk 45s linear infinite}
+.tick span{padding-right:24px}
+.tick i{font-style:normal;color:var(--sun)}
+@keyframes tk{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){details.q summary .pl{transition:none}.tick .t{animation:none}.btn:active{transform:none}html{scroll-behavior:auto}}
+
+.steps{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink)}
+.steps>div{padding:28px 28px 8px 28px;border-left:1px solid var(--line)}
+.steps>div:first-child{padding-left:0;border-left:0}
+.steps .h{font-size:22px;margin:14px 0 10px}
+.steps p.mut{margin:0;font-size:16px}
+
+.spec{display:grid;grid-template-columns:56px 1fr;gap:0 20px;padding:22px 0;border-top:1px solid var(--line)}
+.spec:last-child{border-bottom:1px solid var(--line)}
+.spec b{display:block;font-size:19px;margin-bottom:4px}
+.spec .mut{font-size:16px}
+
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.pc{position:relative;background:#FFFFFF;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:0 0 18px;display:flex;flex-direction:column}
+.pc .im{width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;background:#EDEAE0}
+.pc .cr{position:absolute;top:0;left:0;background:rgba(29,46,23,.72);color:#FFFFFF;font-size:11px;padding:3px 7px}
+.pc>p,.pc>.nm,.pc>.pr,.pc>a.btn{margin-left:16px;margin-right:16px}
+.pc .cat{margin-top:16px;margin-bottom:2px;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+.pc .nm{font-family:'Days One',sans-serif;text-transform:uppercase;font-size:17px;line-height:1.2;margin-top:0;margin-bottom:4px}
+.pc .so{font-size:15px;color:var(--mut);margin-top:0;margin-bottom:14px}
+.pc .pr{margin-top:auto;margin-bottom:12px;display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.pc .pr b{font-size:20px}
+.pc .pr span{font-size:14px;color:var(--mut)}
+.pc a.btn{min-height:44px;font-size:15px;width:auto}
+
+details.q{border-bottom:1px solid var(--line)}
+details.q summary{text-wrap:balance;list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;min-height:44px;padding:20px 0;font-weight:600;font-size:19px;touch-action:manipulation}
+details.q summary::-webkit-details-marker{display:none}
+details.q summary .pl{flex:0 0 28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:24px;transition:transform 200ms var(--ease)}
+details.q[open] summary .pl{transform:rotate(45deg)}
+details.q p{margin:0 0 22px;color:#3A3F33;max-width:680px}
+
+.ft{background:var(--ink);color:#FFFFFF}
+.ft a{color:#FFFFFF}
+.ft a.bw{color:var(--ink)}
+.ft .mut{color:var(--soft)}
+.fg{display:grid;grid-template-columns:4fr 3fr 3fr 2fr;gap:48px;padding-bottom:64px;border-bottom:1px solid #3A4E33}
+.ft p{font-size:16px;line-height:1.8;margin:0}
+.ft p a,.fb a{display:inline-flex;align-items:center;min-height:44px}
+.fg p a{display:flex}
+.ft .eb{font-size:12px;line-height:1.4}
+#ueber p a{display:inline-block;padding:12px 0}
+.fg>div{min-width:0;overflow-wrap:anywhere}
+
+@media (hover:hover) and (pointer:fine){
+  .bd:hover{background:var(--ink2)} .bw:hover{background:#ECE9DF} .bs:hover{background:#F6CF6E}
+  .bl:hover{background:rgba(29,46,23,.06)}
+  .nav a:hover{box-shadow:inset 0 -2px 0 var(--soft)}
+  .pc:hover .im{transform:scale(1.02)}
+  details.q summary:hover .pl{background:#E9E4D4}
+}
+.pc .imw{overflow:hidden}
+.pc .im{transition:transform 160ms var(--ease)}
+
+/* Handy */
+@media (max-width:900px){
+  body{font-size:17px}
+  .wrap{padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+  .top .wrap{justify-content:center;text-align:center}
+  .top .r,.top .nm1{display:none}
+  .nav{display:none}
+  .logo img{width:44px;height:44px}
+  .logo span{font-size:16px}
+  .hd .btn{min-height:44px;padding:0 16px;font-size:15px}
+  .pad{padding-top:64px;padding-bottom:64px}
+  .split,.s48{grid-template-columns:1fr;gap:32px}
+  #ueber img{max-width:280px}
+  .hero{grid-template-columns:1fr!important;gap:28px!important;padding-top:48px!important;padding-bottom:44px!important}
+  .hero .h1{font-size:clamp(30px,9.6vw,40px)!important;overflow-wrap:break-word}
+  .hero .h2{font-size:22px!important}
+  h2.h{font-size:32px!important}
+  .steps{grid-template-columns:1fr}
+  .steps>div{padding:22px 0 18px;border-left:0;border-top:1px solid var(--line)}
+  .steps>div:first-child{border-top:0}
+  .pgrid{grid-template-columns:repeat(2,1fr)}
+  .pc>p,.pc>.nm,.pc>.pr,.pc>a.btn{margin-left:12px;margin-right:12px}
+  .pc .nm{font-size:15px}
+  .pc .pr span{font-size:15px}
+  .top{font-size:15px}
+  .pc .pr{flex-direction:column;align-items:flex-start;gap:0}
+  .pc .pr b{font-size:18px}
+  .sticky{position:static!important}
+  .fg{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:36px}
+  .fg>div:first-child{grid-column:1/-1}
+  .big{font-size:clamp(30px,10.5vw,110px)!important}
+  .fb{flex-direction:column;gap:12px!important}
+  .ft .fb{font-size:15px!important}
+  .qr{max-width:220px}
+  .hof{grid-template-columns:1fr!important}
 }
 </style>
-
 </head>
-<body style="margin:0;background:#f7f1e3">
-<div style="box-sizing:border-box;width:100%;background:#f7f1e3;color:#2b3523;font-family:Inter,system-ui,sans-serif;font-size:17px;line-height:1.65">
-  <div style="max-width:1040px;margin:0 auto;padding:0 20px">
+<body>
+<div class="top"><div class="wrap"><span><span class="nm1">Naturgarten in Niederwölz · </span>Hoftag jeden Mittwoch, 9–13 Uhr</span><span class="r">Fragen? <a href="tel:+436608743416">+43 660 874 3416</a></span></div></div>
 
-    <header style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px 16px;padding:28px 0">
-      <div class="serif" style="font-size:1.35rem;font-weight:600;color:#2f5a1c">WölzerTaler</div>
-      <nav style="display:flex;flex-wrap:wrap;gap:6px 22px;font-size:15px">
-        <a href="#saison" style="color:#5d6450;text-decoration:none">Saison</a>
-        <a href="#bestellen" style="color:#5d6450;text-decoration:none">Bestellen</a>
-        <a href="#abholung" style="color:#5d6450;text-decoration:none">Hoftag</a>
-        <a href="#kontakt" style="color:#5d6450;text-decoration:none">Kontakt</a>
-      </nav>
-    </header>
+<header class="hd"><div class="wrap">
+  <a class="logo" href="#top" aria-label="WölzerTaler – nach oben"><img src="bilder/wappen.jpg" alt="" width="52" height="52"><span>WölzerTaler<small>Naturgarten</small></span></a>
+  <nav class="nav" aria-label="Hauptmenü"><a href="#bestellen">So geht’s</a><a href="#hoftag">Hoftag</a><a href="#ueber">Über mich</a><a href="#fragen">Fragen</a></nav>
+  <a class="btn bd" href="bestellung.html">Bestellen</a>
+</div></header>
 
-    <div style="border-radius:24px;overflow:hidden;background:#e7efd6;margin-top:8px"><img src="hero.jpg" alt="WölzerTaler Naturgarten Niederwölz" width="1000" height="545" style="width:100%;height:auto;display:block"></div>
-    <div style="padding:44px 0 64px;max-width:720px">
-      <div>
-        <p style="text-transform:uppercase;letter-spacing:.18em;font-size:12px;color:#c8642a;font-weight:600;margin:0 0 18px">Naturgarten · Niederwölz</p>
-        <h1 class="serif" style="font-size:clamp(2.6rem,6.5vw,4.2rem);line-height:1.04;font-weight:400;margin:0 0 22px;text-wrap:balance;color:#2f5a1c">Gemüse, so frisch <em style="color:#c8642a">wie der Morgen</em>.</h1>
-        <p style="font-size:1.12rem;color:#5d6450;margin:0 0 34px;max-width:30em">Wir bauen im Naturgarten an, was in unserer Region gut wächst. Ohne Chemie, mit Rücksicht auf Boden und Mensch. Bestell online und hol dein Gemüse am Hoftag bei uns ab.</p>
-        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:20px">
-          <a class="btn" href="#bestellen">Jetzt bestellen</a>
-          <a class="btn-ghost" href="#saison">Was gerade wächst</a>
-        </div>
-      </div>
-      
+<main id="top">
+<section class="dark">
+  <div class="titelbild" role="img" aria-label="Schriftzug „Wölzertaler Naturgarten Niederwölz“ über einem Gemüsegarten mit Kohl, Lavendel und Rosen, dahinter Wald und Berge"></div>
+  <div class="wrap hero" style="display:grid;grid-template-columns:7fr 5fr;gap:64px;align-items:end;padding-top:88px;padding-bottom:72px">
+    <div>
+      <p class="lbl" style="color:var(--soft);margin-bottom:28px">Gemüse ab Hof · Niederwölz</p>
+      <h1 class="h h1" style="font-size:62px;line-height:1.02;margin-bottom:22px">Weißt du, wo dein Gemüse wächst?</h1>
+      <p class="h h2" style="font-size:30px;line-height:1.15;color:var(--sun)">Unseres wächst in&nbsp;Niederwölz.</p>
     </div>
-
-    <div aria-hidden="true" style="display:flex;align-items:center;gap:16px;color:#c9b98f"><div style="flex:1;height:1px;background:#e3d8bf"></div><svg width="84" height="20" viewBox="0 0 84 20" fill="none" stroke-linecap="round"><path d="M10 4 L14 4 L12 17 Z" fill="#e8812f" stroke="none"/><path d="M12 4 C10 1 9 0 8 0 M12 4 C12 1 12 0 12 -1 M12 4 C14 1 15 0 16 0" stroke="#4f7a33" stroke-width="1.6"/><circle cx="42" cy="11" r="5" fill="#c93a4a"/><path d="M42 6 C40 3 39 2 39 1 M42 6 C44 3 45 2 46 2" stroke="#4f7a33" stroke-width="1.6"/><circle cx="72" cy="11" r="6" fill="#a9cc6f"/><circle cx="72" cy="11" r="3" fill="#c9e08f"/></svg><div style="flex:1;height:1px;background:#e3d8bf"></div></div>
-
-    <section id="ueber" style="padding:56px 0 72px">
-      <div class="two" style="display:grid;grid-template-columns:1fr 1.4fr;gap:48px">
-        <h2 class="serif" style="font-size:2rem;font-weight:400;margin:0;color:#2f5a1c;line-height:1.15">Über uns</h2>
-        <div>
-          <p style="font-size:1.1rem;margin:0 0 18px">Der WölzerTaler ist ein kleiner Naturgarten in Niederwölz. Wir arbeiten mit der Natur, düngen mit eigener Gründüngung und Pflanzenkohle und pflanzen nach der Saison.</p>
-          <p style="margin:0 0 32px;color:#5d6450">Was wir ernten, verkaufen wir frisch an unsere Kunden. Das schmeckt man.</p>
-          <figure style="margin:0;padding:24px 28px;border-radius:18px;background:#fffdf7;border:1px solid #e3d8bf">
-            <blockquote class="serif" style="margin:0 0 12px;font-size:1.35rem;line-height:1.4;font-style:italic;color:#2f5a1c">„[Dein Satz: zum Beispiel, warum du ohne Chemie arbeitest]“</blockquote>
-            <figcaption style="font-size:14px;color:#5d6450">Werner Hansmann, Gärtner</figcaption>
-          </figure>
-        </div>
-      </div>
-
-      <div class="three" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:48px">
-        <div style="aspect-ratio:4/3;max-width:100%;border-radius:18px;background:#ece4cf;border:1px dashed #cdbf9c;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;color:#7a7360;font-size:14px">[Foto: Beete im Morgenlicht]</div>
-        <div style="aspect-ratio:4/3;max-width:100%;border-radius:18px;background:#ece4cf;border:1px dashed #cdbf9c;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;color:#7a7360;font-size:14px">[Foto: Kiste mit frischer Ernte]</div>
-        <div style="aspect-ratio:4/3;max-width:100%;border-radius:18px;background:#ece4cf;border:1px dashed #cdbf9c;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;color:#7a7360;font-size:14px">[Foto: Werner bei der Arbeit]</div>
-      </div>
-    </section>
-
-    <div aria-hidden="true" style="display:flex;align-items:center;gap:16px;color:#c9b98f"><div style="flex:1;height:1px;background:#e3d8bf"></div><svg width="84" height="20" viewBox="0 0 84 20" fill="none" stroke-linecap="round"><path d="M10 4 L14 4 L12 17 Z" fill="#e8812f" stroke="none"/><path d="M12 4 C10 1 9 0 8 0 M12 4 C12 1 12 0 12 -1 M12 4 C14 1 15 0 16 0" stroke="#4f7a33" stroke-width="1.6"/><circle cx="42" cy="11" r="5" fill="#c93a4a"/><path d="M42 6 C40 3 39 2 39 1 M42 6 C44 3 45 2 46 2" stroke="#4f7a33" stroke-width="1.6"/><circle cx="72" cy="11" r="6" fill="#a9cc6f"/><circle cx="72" cy="11" r="3" fill="#c9e08f"/></svg><div style="flex:1;height:1px;background:#e3d8bf"></div></div>
-
-    <section id="saison" style="padding:56px 0 72px">
-      <h2 class="serif" style="font-size:2rem;font-weight:400;margin:0 0 10px;color:#2f5a1c">Das wächst bei uns</h2>
-      <p id="saisonText" style="margin:0 0 36px;color:#5d6450;max-width:34em"></p>
-      <div id="saisonGrid" class="three" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px"></div>
-    </section>
-
-    <div aria-hidden="true" style="display:flex;align-items:center;gap:16px;color:#c9b98f"><div style="flex:1;height:1px;background:#e3d8bf"></div><svg width="84" height="20" viewBox="0 0 84 20" fill="none" stroke-linecap="round"><path d="M10 4 L14 4 L12 17 Z" fill="#e8812f" stroke="none"/><path d="M12 4 C10 1 9 0 8 0 M12 4 C12 1 12 0 12 -1 M12 4 C14 1 15 0 16 0" stroke="#4f7a33" stroke-width="1.6"/><circle cx="42" cy="11" r="5" fill="#c93a4a"/><path d="M42 6 C40 3 39 2 39 1 M42 6 C44 3 45 2 46 2" stroke="#4f7a33" stroke-width="1.6"/><circle cx="72" cy="11" r="6" fill="#a9cc6f"/><circle cx="72" cy="11" r="3" fill="#c9e08f"/></svg><div style="flex:1;height:1px;background:#e3d8bf"></div></div>
-
-    <section id="bestellen" style="padding:56px 0 72px">
-      <div class="two" style="display:grid;grid-template-columns:1.3fr 0.7fr;gap:48px;align-items:center">
-        <div>
-          <h2 class="serif" style="font-size:2rem;font-weight:400;margin:0 0 32px;color:#2f5a1c">So bestellst du</h2>
-          <div style="display:flex;flex-direction:column;gap:20px">
-            <div style="display:flex;gap:18px;align-items:baseline"><span class="serif" style="font-size:2rem;color:#c8642a;line-height:1;min-width:24px">1</span><p style="margin:0">Öffne unsere Bestellliste über den Button oder scanne den QR-Code mit dem Handy.</p></div>
-            <div style="display:flex;gap:18px;align-items:baseline"><span class="serif" style="font-size:2rem;color:#c8642a;line-height:1;min-width:24px">2</span><p style="margin:0">Wähle, was du möchtest, und die Menge.</p></div>
-            <div style="display:flex;gap:18px;align-items:baseline"><span class="serif" style="font-size:2rem;color:#c8642a;line-height:1;min-width:24px">3</span><p style="margin:0">Sende die Bestellung ab und hol sie am Mittwoch beim Hoftag ab.</p></div>
-          </div>
-          <p style="margin:36px 0 0"><a class="btn" href="bestellung.html" target="_blank" rel="noopener">Bestellliste öffnen</a></p>
-        </div>
-        <div style="background:#fffdf7;border:1px solid #e3d8bf;border-radius:22px;padding:22px;text-align:center;max-width:280px;width:100%;box-sizing:border-box;justify-self:center">
-          <div style="width:100%;aspect-ratio:1/1"><svg viewBox="0 0 45 45" width="100%" height="100%" role="img" aria-label="QR-Code zur Bestellliste" shape-rendering="crispEdges"><rect width="45" height="45" fill="#ffffff"/><path d="M4 4h1v1h-1zM5 4h1v1h-1zM6 4h1v1h-1zM7 4h1v1h-1zM8 4h1v1h-1zM9 4h1v1h-1zM10 4h1v1h-1zM13 4h1v1h-1zM15 4h1v1h-1zM20 4h1v1h-1zM21 4h1v1h-1zM22 4h1v1h-1zM28 4h1v1h-1zM30 4h1v1h-1zM31 4h1v1h-1zM34 4h1v1h-1zM35 4h1v1h-1zM36 4h1v1h-1zM37 4h1v1h-1zM38 4h1v1h-1zM39 4h1v1h-1zM40 4h1v1h-1zM4 5h1v1h-1zM10 5h1v1h-1zM12 5h1v1h-1zM13 5h1v1h-1zM16 5h1v1h-1zM18 5h1v1h-1zM19 5h1v1h-1zM20 5h1v1h-1zM22 5h1v1h-1zM25 5h1v1h-1zM26 5h1v1h-1zM27 5h1v1h-1zM28 5h1v1h-1zM29 5h1v1h-1zM31 5h1v1h-1zM32 5h1v1h-1zM34 5h1v1h-1zM40 5h1v1h-1zM4 6h1v1h-1zM6 6h1v1h-1zM7 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM13 6h1v1h-1zM18 6h1v1h-1zM19 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM23 6h1v1h-1zM28 6h1v1h-1zM34 6h1v1h-1zM36 6h1v1h-1zM37 6h1v1h-1zM38 6h1v1h-1zM40 6h1v1h-1zM4 7h1v1h-1zM6 7h1v1h-1zM7 7h1v1h-1zM8 7h1v1h-1zM10 7h1v1h-1zM18 7h1v1h-1zM19 7h1v1h-1zM22 7h1v1h-1zM26 7h1v1h-1zM27 7h1v1h-1zM28 7h1v1h-1zM30 7h1v1h-1zM31 7h1v1h-1zM34 7h1v1h-1zM36 7h1v1h-1zM37 7h1v1h-1zM38 7h1v1h-1zM40 7h1v1h-1zM4 8h1v1h-1zM6 8h1v1h-1zM7 8h1v1h-1zM8 8h1v1h-1zM10 8h1v1h-1zM12 8h1v1h-1zM14 8h1v1h-1zM15 8h1v1h-1zM19 8h1v1h-1zM22 8h1v1h-1zM23 8h1v1h-1zM24 8h1v1h-1zM25 8h1v1h-1zM26 8h1v1h-1zM27 8h1v1h-1zM29 8h1v1h-1zM30 8h1v1h-1zM31 8h1v1h-1zM34 8h1v1h-1zM36 8h1v1h-1zM37 8h1v1h-1zM38 8h1v1h-1zM40 8h1v1h-1zM4 9h1v1h-1zM10 9h1v1h-1zM13 9h1v1h-1zM14 9h1v1h-1zM15 9h1v1h-1zM16 9h1v1h-1zM18 9h1v1h-1zM21 9h1v1h-1zM23 9h1v1h-1zM26 9h1v1h-1zM27 9h1v1h-1zM30 9h1v1h-1zM31 9h1v1h-1zM34 9h1v1h-1zM40 9h1v1h-1zM4 10h1v1h-1zM5 10h1v1h-1zM6 10h1v1h-1zM7 10h1v1h-1zM8 10h1v1h-1zM9 10h1v1h-1zM10 10h1v1h-1zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM18 10h1v1h-1zM20 10h1v1h-1zM22 10h1v1h-1zM24 10h1v1h-1zM26 10h1v1h-1zM28 10h1v1h-1zM30 10h1v1h-1zM32 10h1v1h-1zM34 10h1v1h-1zM35 10h1v1h-1zM36 10h1v1h-1zM37 10h1v1h-1zM38 10h1v1h-1zM39 10h1v1h-1zM40 10h1v1h-1zM17 11h1v1h-1zM21 11h1v1h-1zM22 11h1v1h-1zM27 11h1v1h-1zM29 11h1v1h-1zM31 11h1v1h-1zM4 12h1v1h-1zM6 12h1v1h-1zM8 12h1v1h-1zM10 12h1v1h-1zM13 12h1v1h-1zM14 12h1v1h-1zM17 12h1v1h-1zM20 12h1v1h-1zM22 12h1v1h-1zM27 12h1v1h-1zM28 12h1v1h-1zM29 12h1v1h-1zM31 12h1v1h-1zM36 12h1v1h-1zM39 12h1v1h-1zM4 13h1v1h-1zM5 13h1v1h-1zM7 13h1v1h-1zM8 13h1v1h-1zM9 13h1v1h-1zM11 13h1v1h-1zM13 13h1v1h-1zM17 13h1v1h-1zM19 13h1v1h-1zM20 13h1v1h-1zM22 13h1v1h-1zM23 13h1v1h-1zM25 13h1v1h-1zM27 13h1v1h-1zM28 13h1v1h-1zM32 13h1v1h-1zM33 13h1v1h-1zM34 13h1v1h-1zM40 13h1v1h-1zM6 14h1v1h-1zM8 14h1v1h-1zM10 14h1v1h-1zM14 14h1v1h-1zM15 14h1v1h-1zM16 14h1v1h-1zM18 14h1v1h-1zM19 14h1v1h-1zM20 14h1v1h-1zM22 14h1v1h-1zM27 14h1v1h-1zM28 14h1v1h-1zM29 14h1v1h-1zM32 14h1v1h-1zM33 14h1v1h-1zM34 14h1v1h-1zM38 14h1v1h-1zM39 14h1v1h-1zM40 14h1v1h-1zM4 15h1v1h-1zM9 15h1v1h-1zM11 15h1v1h-1zM12 15h1v1h-1zM13 15h1v1h-1zM18 15h1v1h-1zM20 15h1v1h-1zM21 15h1v1h-1zM22 15h1v1h-1zM23 15h1v1h-1zM25 15h1v1h-1zM26 15h1v1h-1zM28 15h1v1h-1zM29 15h1v1h-1zM31 15h1v1h-1zM32 15h1v1h-1zM33 15h1v1h-1zM35 15h1v1h-1zM39 15h1v1h-1zM4 16h1v1h-1zM5 16h1v1h-1zM9 16h1v1h-1zM10 16h1v1h-1zM11 16h1v1h-1zM12 16h1v1h-1zM14 16h1v1h-1zM16 16h1v1h-1zM18 16h1v1h-1zM19 16h1v1h-1zM21 16h1v1h-1zM24 16h1v1h-1zM25 16h1v1h-1zM26 16h1v1h-1zM27 16h1v1h-1zM28 16h1v1h-1zM29 16h1v1h-1zM31 16h1v1h-1zM32 16h1v1h-1zM33 16h1v1h-1zM34 16h1v1h-1zM39 16h1v1h-1zM40 16h1v1h-1zM5 17h1v1h-1zM9 17h1v1h-1zM11 17h1v1h-1zM12 17h1v1h-1zM13 17h1v1h-1zM16 17h1v1h-1zM17 17h1v1h-1zM20 17h1v1h-1zM24 17h1v1h-1zM25 17h1v1h-1zM28 17h1v1h-1zM29 17h1v1h-1zM30 17h1v1h-1zM32 17h1v1h-1zM33 17h1v1h-1zM34 17h1v1h-1zM40 17h1v1h-1zM4 18h1v1h-1zM7 18h1v1h-1zM8 18h1v1h-1zM10 18h1v1h-1zM12 18h1v1h-1zM14 18h1v1h-1zM17 18h1v1h-1zM18 18h1v1h-1zM20 18h1v1h-1zM21 18h1v1h-1zM26 18h1v1h-1zM29 18h1v1h-1zM33 18h1v1h-1zM34 18h1v1h-1zM35 18h1v1h-1zM38 18h1v1h-1zM39 18h1v1h-1zM40 18h1v1h-1zM4 19h1v1h-1zM5 19h1v1h-1zM6 19h1v1h-1zM7 19h1v1h-1zM8 19h1v1h-1zM12 19h1v1h-1zM14 19h1v1h-1zM15 19h1v1h-1zM16 19h1v1h-1zM18 19h1v1h-1zM19 19h1v1h-1zM20 19h1v1h-1zM23 19h1v1h-1zM24 19h1v1h-1zM25 19h1v1h-1zM26 19h1v1h-1zM27 19h1v1h-1zM28 19h1v1h-1zM29 19h1v1h-1zM30 19h1v1h-1zM31 19h1v1h-1zM32 19h1v1h-1zM36 19h1v1h-1zM39 19h1v1h-1zM40 19h1v1h-1zM4 20h1v1h-1zM6 20h1v1h-1zM9 20h1v1h-1zM10 20h1v1h-1zM14 20h1v1h-1zM15 20h1v1h-1zM17 20h1v1h-1zM19 20h1v1h-1zM24 20h1v1h-1zM26 20h1v1h-1zM27 20h1v1h-1zM28 20h1v1h-1zM29 20h1v1h-1zM30 20h1v1h-1zM32 20h1v1h-1zM33 20h1v1h-1zM34 20h1v1h-1zM37 20h1v1h-1zM40 20h1v1h-1zM4 21h1v1h-1zM5 21h1v1h-1zM7 21h1v1h-1zM8 21h1v1h-1zM9 21h1v1h-1zM11 21h1v1h-1zM13 21h1v1h-1zM15 21h1v1h-1zM16 21h1v1h-1zM17 21h1v1h-1zM18 21h1v1h-1zM19 21h1v1h-1zM23 21h1v1h-1zM24 21h1v1h-1zM26 21h1v1h-1zM27 21h1v1h-1zM29 21h1v1h-1zM32 21h1v1h-1zM34 21h1v1h-1zM37 21h1v1h-1zM40 21h1v1h-1zM4 22h1v1h-1zM5 22h1v1h-1zM6 22h1v1h-1zM8 22h1v1h-1zM9 22h1v1h-1zM10 22h1v1h-1zM21 22h1v1h-1zM23 22h1v1h-1zM24 22h1v1h-1zM25 22h1v1h-1zM28 22h1v1h-1zM29 22h1v1h-1zM30 22h1v1h-1zM32 22h1v1h-1zM34 22h1v1h-1zM35 22h1v1h-1zM37 22h1v1h-1zM38 22h1v1h-1zM39 22h1v1h-1zM40 22h1v1h-1zM5 23h1v1h-1zM6 23h1v1h-1zM9 23h1v1h-1zM12 23h1v1h-1zM15 23h1v1h-1zM16 23h1v1h-1zM19 23h1v1h-1zM21 23h1v1h-1zM22 23h1v1h-1zM24 23h1v1h-1zM25 23h1v1h-1zM27 23h1v1h-1zM28 23h1v1h-1zM29 23h1v1h-1zM30 23h1v1h-1zM31 23h1v1h-1zM32 23h1v1h-1zM36 23h1v1h-1zM39 23h1v1h-1zM4 24h1v1h-1zM7 24h1v1h-1zM10 24h1v1h-1zM11 24h1v1h-1zM13 24h1v1h-1zM15 24h1v1h-1zM17 24h1v1h-1zM20 24h1v1h-1zM21 24h1v1h-1zM22 24h1v1h-1zM23 24h1v1h-1zM25 24h1v1h-1zM27 24h1v1h-1zM28 24h1v1h-1zM29 24h1v1h-1zM31 24h1v1h-1zM33 24h1v1h-1zM34 24h1v1h-1zM5 25h1v1h-1zM7 25h1v1h-1zM8 25h1v1h-1zM9 25h1v1h-1zM13 25h1v1h-1zM14 25h1v1h-1zM15 25h1v1h-1zM17 25h1v1h-1zM20 25h1v1h-1zM21 25h1v1h-1zM24 25h1v1h-1zM32 25h1v1h-1zM33 25h1v1h-1zM34 25h1v1h-1zM35 25h1v1h-1zM37 25h1v1h-1zM40 25h1v1h-1zM4 26h1v1h-1zM8 26h1v1h-1zM9 26h1v1h-1zM10 26h1v1h-1zM13 26h1v1h-1zM22 26h1v1h-1zM24 26h1v1h-1zM25 26h1v1h-1zM28 26h1v1h-1zM29 26h1v1h-1zM32 26h1v1h-1zM34 26h1v1h-1zM35 26h1v1h-1zM38 26h1v1h-1zM39 26h1v1h-1zM40 26h1v1h-1zM4 27h1v1h-1zM6 27h1v1h-1zM7 27h1v1h-1zM8 27h1v1h-1zM12 27h1v1h-1zM16 27h1v1h-1zM19 27h1v1h-1zM20 27h1v1h-1zM21 27h1v1h-1zM22 27h1v1h-1zM23 27h1v1h-1zM28 27h1v1h-1zM29 27h1v1h-1zM34 27h1v1h-1zM36 27h1v1h-1zM4 28h1v1h-1zM5 28h1v1h-1zM6 28h1v1h-1zM7 28h1v1h-1zM9 28h1v1h-1zM10 28h1v1h-1zM12 28h1v1h-1zM14 28h1v1h-1zM17 28h1v1h-1zM20 28h1v1h-1zM22 28h1v1h-1zM23 28h1v1h-1zM27 28h1v1h-1zM28 28h1v1h-1zM29 28h1v1h-1zM31 28h1v1h-1zM32 28h1v1h-1zM33 28h1v1h-1zM34 28h1v1h-1zM37 28h1v1h-1zM39 28h1v1h-1zM40 28h1v1h-1zM5 29h1v1h-1zM7 29h1v1h-1zM9 29h1v1h-1zM11 29h1v1h-1zM13 29h1v1h-1zM15 29h1v1h-1zM16 29h1v1h-1zM19 29h1v1h-1zM20 29h1v1h-1zM22 29h1v1h-1zM23 29h1v1h-1zM25 29h1v1h-1zM28 29h1v1h-1zM32 29h1v1h-1zM34 29h1v1h-1zM35 29h1v1h-1zM38 29h1v1h-1zM39 29h1v1h-1zM40 29h1v1h-1zM4 30h1v1h-1zM7 30h1v1h-1zM8 30h1v1h-1zM9 30h1v1h-1zM10 30h1v1h-1zM13 30h1v1h-1zM14 30h1v1h-1zM15 30h1v1h-1zM16 30h1v1h-1zM18 30h1v1h-1zM19 30h1v1h-1zM20 30h1v1h-1zM21 30h1v1h-1zM25 30h1v1h-1zM34 30h1v1h-1zM38 30h1v1h-1zM39 30h1v1h-1zM40 30h1v1h-1zM5 31h1v1h-1zM6 31h1v1h-1zM11 31h1v1h-1zM13 31h1v1h-1zM14 31h1v1h-1zM20 31h1v1h-1zM21 31h1v1h-1zM22 31h1v1h-1zM23 31h1v1h-1zM25 31h1v1h-1zM26 31h1v1h-1zM27 31h1v1h-1zM28 31h1v1h-1zM29 31h1v1h-1zM30 31h1v1h-1zM31 31h1v1h-1zM32 31h1v1h-1zM33 31h1v1h-1zM34 31h1v1h-1zM35 31h1v1h-1zM4 32h1v1h-1zM6 32h1v1h-1zM7 32h1v1h-1zM9 32h1v1h-1zM10 32h1v1h-1zM13 32h1v1h-1zM14 32h1v1h-1zM17 32h1v1h-1zM19 32h1v1h-1zM20 32h1v1h-1zM21 32h1v1h-1zM24 32h1v1h-1zM25 32h1v1h-1zM27 32h1v1h-1zM28 32h1v1h-1zM29 32h1v1h-1zM32 32h1v1h-1zM33 32h1v1h-1zM34 32h1v1h-1zM35 32h1v1h-1zM36 32h1v1h-1zM40 32h1v1h-1zM12 33h1v1h-1zM13 33h1v1h-1zM16 33h1v1h-1zM17 33h1v1h-1zM18 33h1v1h-1zM20 33h1v1h-1zM22 33h1v1h-1zM24 33h1v1h-1zM25 33h1v1h-1zM28 33h1v1h-1zM31 33h1v1h-1zM32 33h1v1h-1zM36 33h1v1h-1zM37 33h1v1h-1zM39 33h1v1h-1zM40 33h1v1h-1zM4 34h1v1h-1zM5 34h1v1h-1zM6 34h1v1h-1zM7 34h1v1h-1zM8 34h1v1h-1zM9 34h1v1h-1zM10 34h1v1h-1zM14 34h1v1h-1zM15 34h1v1h-1zM16 34h1v1h-1zM17 34h1v1h-1zM21 34h1v1h-1zM24 34h1v1h-1zM26 34h1v1h-1zM28 34h1v1h-1zM30 34h1v1h-1zM31 34h1v1h-1zM32 34h1v1h-1zM34 34h1v1h-1zM36 34h1v1h-1zM37 34h1v1h-1zM39 34h1v1h-1zM40 34h1v1h-1zM4 35h1v1h-1zM10 35h1v1h-1zM15 35h1v1h-1zM16 35h1v1h-1zM17 35h1v1h-1zM20 35h1v1h-1zM23 35h1v1h-1zM24 35h1v1h-1zM25 35h1v1h-1zM26 35h1v1h-1zM28 35h1v1h-1zM29 35h1v1h-1zM32 35h1v1h-1zM36 35h1v1h-1zM37 35h1v1h-1zM39 35h1v1h-1zM40 35h1v1h-1zM4 36h1v1h-1zM6 36h1v1h-1zM7 36h1v1h-1zM8 36h1v1h-1zM10 36h1v1h-1zM12 36h1v1h-1zM14 36h1v1h-1zM16 36h1v1h-1zM17 36h1v1h-1zM18 36h1v1h-1zM19 36h1v1h-1zM24 36h1v1h-1zM26 36h1v1h-1zM27 36h1v1h-1zM28 36h1v1h-1zM29 36h1v1h-1zM32 36h1v1h-1zM33 36h1v1h-1zM34 36h1v1h-1zM35 36h1v1h-1zM36 36h1v1h-1zM37 36h1v1h-1zM4 37h1v1h-1zM6 37h1v1h-1zM7 37h1v1h-1zM8 37h1v1h-1zM10 37h1v1h-1zM13 37h1v1h-1zM15 37h1v1h-1zM19 37h1v1h-1zM21 37h1v1h-1zM23 37h1v1h-1zM24 37h1v1h-1zM26 37h1v1h-1zM28 37h1v1h-1zM29 37h1v1h-1zM30 37h1v1h-1zM31 37h1v1h-1zM35 37h1v1h-1zM36 37h1v1h-1zM39 37h1v1h-1zM4 38h1v1h-1zM6 38h1v1h-1zM7 38h1v1h-1zM8 38h1v1h-1zM10 38h1v1h-1zM12 38h1v1h-1zM13 38h1v1h-1zM17 38h1v1h-1zM18 38h1v1h-1zM21 38h1v1h-1zM23 38h1v1h-1zM24 38h1v1h-1zM26 38h1v1h-1zM28 38h1v1h-1zM30 38h1v1h-1zM31 38h1v1h-1zM36 38h1v1h-1zM37 38h1v1h-1zM38 38h1v1h-1zM39 38h1v1h-1zM40 38h1v1h-1zM4 39h1v1h-1zM10 39h1v1h-1zM13 39h1v1h-1zM14 39h1v1h-1zM17 39h1v1h-1zM18 39h1v1h-1zM19 39h1v1h-1zM21 39h1v1h-1zM22 39h1v1h-1zM24 39h1v1h-1zM25 39h1v1h-1zM26 39h1v1h-1zM27 39h1v1h-1zM28 39h1v1h-1zM29 39h1v1h-1zM30 39h1v1h-1zM31 39h1v1h-1zM32 39h1v1h-1zM35 39h1v1h-1zM36 39h1v1h-1zM39 39h1v1h-1zM4 40h1v1h-1zM5 40h1v1h-1zM6 40h1v1h-1zM7 40h1v1h-1zM8 40h1v1h-1zM9 40h1v1h-1zM10 40h1v1h-1zM12 40h1v1h-1zM14 40h1v1h-1zM15 40h1v1h-1zM20 40h1v1h-1zM21 40h1v1h-1zM23 40h1v1h-1zM25 40h1v1h-1zM28 40h1v1h-1zM29 40h1v1h-1zM31 40h1v1h-1zM32 40h1v1h-1zM34 40h1v1h-1zM37 40h1v1h-1zM39 40h1v1h-1zM40 40h1v1h-1z" fill="#2b3523"/></svg></div>
-          <p style="margin:12px 0 0;font-size:14px;color:#5d6450">Mit dem Handy scannen</p>
-        </div>
-      </div>
-    </section>
-
-    <div aria-hidden="true" style="display:flex;align-items:center;gap:16px;color:#c9b98f"><div style="flex:1;height:1px;background:#e3d8bf"></div><svg width="84" height="20" viewBox="0 0 84 20" fill="none" stroke-linecap="round"><path d="M10 4 L14 4 L12 17 Z" fill="#e8812f" stroke="none"/><path d="M12 4 C10 1 9 0 8 0 M12 4 C12 1 12 0 12 -1 M12 4 C14 1 15 0 16 0" stroke="#4f7a33" stroke-width="1.6"/><circle cx="42" cy="11" r="5" fill="#c93a4a"/><path d="M42 6 C40 3 39 2 39 1 M42 6 C44 3 45 2 46 2" stroke="#4f7a33" stroke-width="1.6"/><circle cx="72" cy="11" r="6" fill="#a9cc6f"/><circle cx="72" cy="11" r="3" fill="#c9e08f"/></svg><div style="flex:1;height:1px;background:#e3d8bf"></div></div>
-
-    <section id="abholung" style="padding:56px 0 72px">
-      <div class="two" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center">
-        <div>
-          <h2 class="serif" style="font-size:2rem;font-weight:400;margin:0 0 16px;color:#2f5a1c">Abholung am Hoftag</h2>
-          <p style="margin:0 0 22px;color:#5d6450">Deine Bestellung liegt jeden Mittwoch für dich bereit. Komm vorbei, hol dein Gemüse ab und schau dir den Garten an.</p>
-          <a href="https://maps.app.goo.gl/j7qypQ11bANTvcZV8" target="_blank" rel="noopener" class="btn-ghost">Standort auf der Karte</a>
-        </div>
-        <div style="padding:32px;border-radius:22px;background:#2f5a1c;color:#f7f1e3">
-          <p style="text-transform:uppercase;letter-spacing:.16em;font-size:12px;color:#f4c95d;font-weight:600;margin:0 0 10px">Hoftag</p>
-          <p class="serif" style="font-size:2.2rem;line-height:1.1;margin:0 0 6px">Mittwoch</p>
-          <p class="serif" style="font-size:1.5rem;margin:0 0 18px;color:#c9dcaa">9 bis 13 Uhr</p>
-          <p style="margin:0;color:#c9dcaa;font-size:15px">Hinterbichl 110 · 8831 Niederwölz</p>
-        </div>
-      </div>
-    </section>
-
-    <div aria-hidden="true" style="display:flex;align-items:center;gap:16px;color:#c9b98f"><div style="flex:1;height:1px;background:#e3d8bf"></div><svg width="84" height="20" viewBox="0 0 84 20" fill="none" stroke-linecap="round"><path d="M10 4 L14 4 L12 17 Z" fill="#e8812f" stroke="none"/><path d="M12 4 C10 1 9 0 8 0 M12 4 C12 1 12 0 12 -1 M12 4 C14 1 15 0 16 0" stroke="#4f7a33" stroke-width="1.6"/><circle cx="42" cy="11" r="5" fill="#c93a4a"/><path d="M42 6 C40 3 39 2 39 1 M42 6 C44 3 45 2 46 2" stroke="#4f7a33" stroke-width="1.6"/><circle cx="72" cy="11" r="6" fill="#a9cc6f"/><circle cx="72" cy="11" r="3" fill="#c9e08f"/></svg><div style="flex:1;height:1px;background:#e3d8bf"></div></div>
-
-    <section id="kontakt" style="padding:56px 0 72px">
-      <h2 class="serif" style="font-size:2rem;font-weight:400;margin:0 0 24px;color:#2f5a1c">Kontakt</h2>
-      <div style="display:flex;flex-wrap:wrap;gap:14px">
-        <a class="btn" href="tel:+436608743416">Anrufen</a>
-        <a class="btn" href="https://wa.me/436608743416" target="_blank" rel="noopener" style="background:#fffdf7;color:#2f5a1c;border:1px solid #cdbf9c">WhatsApp</a>
-      </div>
-      <p style="margin:20px 0 0;color:#5d6450">+43 660 8743416 · dablju.hansmann@gmail.com</p>
-    </section>
+    <div>
+      <p style="margin:0 0 32px;font-size:19px;color:#DCE3D3">Ohne Chemie, mit Gründüngung und Pflanzenkohle im Boden. Du bestellst online und holst am Mittwoch im Garten ab.</p>
+      <a class="btn bs" href="bestellung.html" style="min-height:60px;padding:0 32px;font-size:17px">Gemüse bestellen →</a>
+    </div>
   </div>
+</section>
 
-  <footer style="background:#2f5a1c;color:#c9dcaa;font-size:14px">
-    <div style="max-width:1040px;margin:0 auto;padding:40px 20px 48px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px">
-      <div>
-        <div class="serif" style="font-size:1.3rem;color:#f7f1e3;margin-bottom:4px">WölzerTaler</div>
-        <span>Naturgarten · Niederwölz</span>
-      </div>
-      <a href="impressum.html" style="color:#c9dcaa">Impressum</a>
+<div class="tick" aria-hidden="true"><div class="t h" style="font-size:22px"><span>Ernte Mai–Oktober <i>✺</i> Ohne Chemie <i>✺</i> Pflanzenkohle im Boden <i>✺</i> Hoftag Mittwoch <i>✺</i> Bio-Saatgut <i>✺</i> Aus Niederwölz <i>✺</i> Ernte Mai–Oktober <i>✺</i> Ohne Chemie <i>✺</i> Pflanzenkohle im Boden <i>✺</i> Hoftag Mittwoch <i>✺</i> Bio-Saatgut <i>✺</i> Aus Niederwölz <i>✺</i> </span><span>Ernte Mai–Oktober <i>✺</i> Ohne Chemie <i>✺</i> Pflanzenkohle im Boden <i>✺</i> Hoftag Mittwoch <i>✺</i> Bio-Saatgut <i>✺</i> Aus Niederwölz <i>✺</i> Ernte Mai–Oktober <i>✺</i> Ohne Chemie <i>✺</i> Pflanzenkohle im Boden <i>✺</i> Hoftag Mittwoch <i>✺</i> Bio-Saatgut <i>✺</i> Aus Niederwölz <i>✺</i> </span></div></div>
+
+<section id="bestellen" class="wrap pad">
+  <div class="split">
+    <div>
+      <p class="eb">So geht’s</p>
+      <h2 class="h" style="font-size:44px;margin-bottom:20px">Wie bestellst du?</h2>
+      <p class="mut" style="margin:0 0 32px;font-size:19px">Kein Konto, kein Bezahlen im Netz. Die Bestellung geht per WhatsApp direkt an Werner.</p>
+      <div class="qr" style="background:#FFFFFF;border:1px solid var(--line);padding:16px;max-width:240px"><svg viewBox="0 0 45 45" width="100%" height="100%" role="img" aria-label="QR-Code zur Bestellliste" shape-rendering="crispEdges"><rect width="45" height="45" fill="#ffffff"/><path d="M4 4h1v1h-1zM5 4h1v1h-1zM6 4h1v1h-1zM7 4h1v1h-1zM8 4h1v1h-1zM9 4h1v1h-1zM10 4h1v1h-1zM13 4h1v1h-1zM15 4h1v1h-1zM20 4h1v1h-1zM21 4h1v1h-1zM22 4h1v1h-1zM28 4h1v1h-1zM30 4h1v1h-1zM31 4h1v1h-1zM34 4h1v1h-1zM35 4h1v1h-1zM36 4h1v1h-1zM37 4h1v1h-1zM38 4h1v1h-1zM39 4h1v1h-1zM40 4h1v1h-1zM4 5h1v1h-1zM10 5h1v1h-1zM12 5h1v1h-1zM13 5h1v1h-1zM16 5h1v1h-1zM18 5h1v1h-1zM19 5h1v1h-1zM20 5h1v1h-1zM22 5h1v1h-1zM25 5h1v1h-1zM26 5h1v1h-1zM27 5h1v1h-1zM28 5h1v1h-1zM29 5h1v1h-1zM31 5h1v1h-1zM32 5h1v1h-1zM34 5h1v1h-1zM40 5h1v1h-1zM4 6h1v1h-1zM6 6h1v1h-1zM7 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM13 6h1v1h-1zM18 6h1v1h-1zM19 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM23 6h1v1h-1zM28 6h1v1h-1zM34 6h1v1h-1zM36 6h1v1h-1zM37 6h1v1h-1zM38 6h1v1h-1zM40 6h1v1h-1zM4 7h1v1h-1zM6 7h1v1h-1zM7 7h1v1h-1zM8 7h1v1h-1zM10 7h1v1h-1zM18 7h1v1h-1zM19 7h1v1h-1zM22 7h1v1h-1zM26 7h1v1h-1zM27 7h1v1h-1zM28 7h1v1h-1zM30 7h1v1h-1zM31 7h1v1h-1zM34 7h1v1h-1zM36 7h1v1h-1zM37 7h1v1h-1zM38 7h1v1h-1zM40 7h1v1h-1zM4 8h1v1h-1zM6 8h1v1h-1zM7 8h1v1h-1zM8 8h1v1h-1zM10 8h1v1h-1zM12 8h1v1h-1zM14 8h1v1h-1zM15 8h1v1h-1zM19 8h1v1h-1zM22 8h1v1h-1zM23 8h1v1h-1zM24 8h1v1h-1zM25 8h1v1h-1zM26 8h1v1h-1zM27 8h1v1h-1zM29 8h1v1h-1zM30 8h1v1h-1zM31 8h1v1h-1zM34 8h1v1h-1zM36 8h1v1h-1zM37 8h1v1h-1zM38 8h1v1h-1zM40 8h1v1h-1zM4 9h1v1h-1zM10 9h1v1h-1zM13 9h1v1h-1zM14 9h1v1h-1zM15 9h1v1h-1zM16 9h1v1h-1zM18 9h1v1h-1zM21 9h1v1h-1zM23 9h1v1h-1zM26 9h1v1h-1zM27 9h1v1h-1zM30 9h1v1h-1zM31 9h1v1h-1zM34 9h1v1h-1zM40 9h1v1h-1zM4 10h1v1h-1zM5 10h1v1h-1zM6 10h1v1h-1zM7 10h1v1h-1zM8 10h1v1h-1zM9 10h1v1h-1zM10 10h1v1h-1zM12 10h1v1h-1zM14 10h1v1h-1zM16 10h1v1h-1zM18 10h1v1h-1zM20 10h1v1h-1zM22 10h1v1h-1zM24 10h1v1h-1zM26 10h1v1h-1zM28 10h1v1h-1zM30 10h1v1h-1zM32 10h1v1h-1zM34 10h1v1h-1zM35 10h1v1h-1zM36 10h1v1h-1zM37 10h1v1h-1zM38 10h1v1h-1zM39 10h1v1h-1zM40 10h1v1h-1zM17 11h1v1h-1zM21 11h1v1h-1zM22 11h1v1h-1zM27 11h1v1h-1zM29 11h1v1h-1zM31 11h1v1h-1zM4 12h1v1h-1zM6 12h1v1h-1zM8 12h1v1h-1zM10 12h1v1h-1zM13 12h1v1h-1zM14 12h1v1h-1zM17 12h1v1h-1zM20 12h1v1h-1zM22 12h1v1h-1zM27 12h1v1h-1zM28 12h1v1h-1zM29 12h1v1h-1zM31 12h1v1h-1zM36 12h1v1h-1zM39 12h1v1h-1zM4 13h1v1h-1zM5 13h1v1h-1zM7 13h1v1h-1zM8 13h1v1h-1zM9 13h1v1h-1zM11 13h1v1h-1zM13 13h1v1h-1zM17 13h1v1h-1zM19 13h1v1h-1zM20 13h1v1h-1zM22 13h1v1h-1zM23 13h1v1h-1zM25 13h1v1h-1zM27 13h1v1h-1zM28 13h1v1h-1zM32 13h1v1h-1zM33 13h1v1h-1zM34 13h1v1h-1zM40 13h1v1h-1zM6 14h1v1h-1zM8 14h1v1h-1zM10 14h1v1h-1zM14 14h1v1h-1zM15 14h1v1h-1zM16 14h1v1h-1zM18 14h1v1h-1zM19 14h1v1h-1zM20 14h1v1h-1zM22 14h1v1h-1zM27 14h1v1h-1zM28 14h1v1h-1zM29 14h1v1h-1zM32 14h1v1h-1zM33 14h1v1h-1zM34 14h1v1h-1zM38 14h1v1h-1zM39 14h1v1h-1zM40 14h1v1h-1zM4 15h1v1h-1zM9 15h1v1h-1zM11 15h1v1h-1zM12 15h1v1h-1zM13 15h1v1h-1zM18 15h1v1h-1zM20 15h1v1h-1zM21 15h1v1h-1zM22 15h1v1h-1zM23 15h1v1h-1zM25 15h1v1h-1zM26 15h1v1h-1zM28 15h1v1h-1zM29 15h1v1h-1zM31 15h1v1h-1zM32 15h1v1h-1zM33 15h1v1h-1zM35 15h1v1h-1zM39 15h1v1h-1zM4 16h1v1h-1zM5 16h1v1h-1zM9 16h1v1h-1zM10 16h1v1h-1zM11 16h1v1h-1zM12 16h1v1h-1zM14 16h1v1h-1zM16 16h1v1h-1zM18 16h1v1h-1zM19 16h1v1h-1zM21 16h1v1h-1zM24 16h1v1h-1zM25 16h1v1h-1zM26 16h1v1h-1zM27 16h1v1h-1zM28 16h1v1h-1zM29 16h1v1h-1zM31 16h1v1h-1zM32 16h1v1h-1zM33 16h1v1h-1zM34 16h1v1h-1zM39 16h1v1h-1zM40 16h1v1h-1zM5 17h1v1h-1zM9 17h1v1h-1zM11 17h1v1h-1zM12 17h1v1h-1zM13 17h1v1h-1zM16 17h1v1h-1zM17 17h1v1h-1zM20 17h1v1h-1zM24 17h1v1h-1zM25 17h1v1h-1zM28 17h1v1h-1zM29 17h1v1h-1zM30 17h1v1h-1zM32 17h1v1h-1zM33 17h1v1h-1zM34 17h1v1h-1zM40 17h1v1h-1zM4 18h1v1h-1zM7 18h1v1h-1zM8 18h1v1h-1zM10 18h1v1h-1zM12 18h1v1h-1zM14 18h1v1h-1zM17 18h1v1h-1zM18 18h1v1h-1zM20 18h1v1h-1zM21 18h1v1h-1zM26 18h1v1h-1zM29 18h1v1h-1zM33 18h1v1h-1zM34 18h1v1h-1zM35 18h1v1h-1zM38 18h1v1h-1zM39 18h1v1h-1zM40 18h1v1h-1zM4 19h1v1h-1zM5 19h1v1h-1zM6 19h1v1h-1zM7 19h1v1h-1zM8 19h1v1h-1zM12 19h1v1h-1zM14 19h1v1h-1zM15 19h1v1h-1zM16 19h1v1h-1zM18 19h1v1h-1zM19 19h1v1h-1zM20 19h1v1h-1zM23 19h1v1h-1zM24 19h1v1h-1zM25 19h1v1h-1zM26 19h1v1h-1zM27 19h1v1h-1zM28 19h1v1h-1zM29 19h1v1h-1zM30 19h1v1h-1zM31 19h1v1h-1zM32 19h1v1h-1zM36 19h1v1h-1zM39 19h1v1h-1zM40 19h1v1h-1zM4 20h1v1h-1zM6 20h1v1h-1zM9 20h1v1h-1zM10 20h1v1h-1zM14 20h1v1h-1zM15 20h1v1h-1zM17 20h1v1h-1zM19 20h1v1h-1zM24 20h1v1h-1zM26 20h1v1h-1zM27 20h1v1h-1zM28 20h1v1h-1zM29 20h1v1h-1zM30 20h1v1h-1zM32 20h1v1h-1zM33 20h1v1h-1zM34 20h1v1h-1zM37 20h1v1h-1zM40 20h1v1h-1zM4 21h1v1h-1zM5 21h1v1h-1zM7 21h1v1h-1zM8 21h1v1h-1zM9 21h1v1h-1zM11 21h1v1h-1zM13 21h1v1h-1zM15 21h1v1h-1zM16 21h1v1h-1zM17 21h1v1h-1zM18 21h1v1h-1zM19 21h1v1h-1zM23 21h1v1h-1zM24 21h1v1h-1zM26 21h1v1h-1zM27 21h1v1h-1zM29 21h1v1h-1zM32 21h1v1h-1zM34 21h1v1h-1zM37 21h1v1h-1zM40 21h1v1h-1zM4 22h1v1h-1zM5 22h1v1h-1zM6 22h1v1h-1zM8 22h1v1h-1zM9 22h1v1h-1zM10 22h1v1h-1zM21 22h1v1h-1zM23 22h1v1h-1zM24 22h1v1h-1zM25 22h1v1h-1zM28 22h1v1h-1zM29 22h1v1h-1zM30 22h1v1h-1zM32 22h1v1h-1zM34 22h1v1h-1zM35 22h1v1h-1zM37 22h1v1h-1zM38 22h1v1h-1zM39 22h1v1h-1zM40 22h1v1h-1zM5 23h1v1h-1zM6 23h1v1h-1zM9 23h1v1h-1zM12 23h1v1h-1zM15 23h1v1h-1zM16 23h1v1h-1zM19 23h1v1h-1zM21 23h1v1h-1zM22 23h1v1h-1zM24 23h1v1h-1zM25 23h1v1h-1zM27 23h1v1h-1zM28 23h1v1h-1zM29 23h1v1h-1zM30 23h1v1h-1zM31 23h1v1h-1zM32 23h1v1h-1zM36 23h1v1h-1zM39 23h1v1h-1zM4 24h1v1h-1zM7 24h1v1h-1zM10 24h1v1h-1zM11 24h1v1h-1zM13 24h1v1h-1zM15 24h1v1h-1zM17 24h1v1h-1zM20 24h1v1h-1zM21 24h1v1h-1zM22 24h1v1h-1zM23 24h1v1h-1zM25 24h1v1h-1zM27 24h1v1h-1zM28 24h1v1h-1zM29 24h1v1h-1zM31 24h1v1h-1zM33 24h1v1h-1zM34 24h1v1h-1zM5 25h1v1h-1zM7 25h1v1h-1zM8 25h1v1h-1zM9 25h1v1h-1zM13 25h1v1h-1zM14 25h1v1h-1zM15 25h1v1h-1zM17 25h1v1h-1zM20 25h1v1h-1zM21 25h1v1h-1zM24 25h1v1h-1zM32 25h1v1h-1zM33 25h1v1h-1zM34 25h1v1h-1zM35 25h1v1h-1zM37 25h1v1h-1zM40 25h1v1h-1zM4 26h1v1h-1zM8 26h1v1h-1zM9 26h1v1h-1zM10 26h1v1h-1zM13 26h1v1h-1zM22 26h1v1h-1zM24 26h1v1h-1zM25 26h1v1h-1zM28 26h1v1h-1zM29 26h1v1h-1zM32 26h1v1h-1zM34 26h1v1h-1zM35 26h1v1h-1zM38 26h1v1h-1zM39 26h1v1h-1zM40 26h1v1h-1zM4 27h1v1h-1zM6 27h1v1h-1zM7 27h1v1h-1zM8 27h1v1h-1zM12 27h1v1h-1zM16 27h1v1h-1zM19 27h1v1h-1zM20 27h1v1h-1zM21 27h1v1h-1zM22 27h1v1h-1zM23 27h1v1h-1zM28 27h1v1h-1zM29 27h1v1h-1zM34 27h1v1h-1zM36 27h1v1h-1zM4 28h1v1h-1zM5 28h1v1h-1zM6 28h1v1h-1zM7 28h1v1h-1zM9 28h1v1h-1zM10 28h1v1h-1zM12 28h1v1h-1zM14 28h1v1h-1zM17 28h1v1h-1zM20 28h1v1h-1zM22 28h1v1h-1zM23 28h1v1h-1zM27 28h1v1h-1zM28 28h1v1h-1zM29 28h1v1h-1zM31 28h1v1h-1zM32 28h1v1h-1zM33 28h1v1h-1zM34 28h1v1h-1zM37 28h1v1h-1zM39 28h1v1h-1zM40 28h1v1h-1zM5 29h1v1h-1zM7 29h1v1h-1zM9 29h1v1h-1zM11 29h1v1h-1zM13 29h1v1h-1zM15 29h1v1h-1zM16 29h1v1h-1zM19 29h1v1h-1zM20 29h1v1h-1zM22 29h1v1h-1zM23 29h1v1h-1zM25 29h1v1h-1zM28 29h1v1h-1zM32 29h1v1h-1zM34 29h1v1h-1zM35 29h1v1h-1zM38 29h1v1h-1zM39 29h1v1h-1zM40 29h1v1h-1zM4 30h1v1h-1zM7 30h1v1h-1zM8 30h1v1h-1zM9 30h1v1h-1zM10 30h1v1h-1zM13 30h1v1h-1zM14 30h1v1h-1zM15 30h1v1h-1zM16 30h1v1h-1zM18 30h1v1h-1zM19 30h1v1h-1zM20 30h1v1h-1zM21 30h1v1h-1zM25 30h1v1h-1zM34 30h1v1h-1zM38 30h1v1h-1zM39 30h1v1h-1zM40 30h1v1h-1zM5 31h1v1h-1zM6 31h1v1h-1zM11 31h1v1h-1zM13 31h1v1h-1zM14 31h1v1h-1zM20 31h1v1h-1zM21 31h1v1h-1zM22 31h1v1h-1zM23 31h1v1h-1zM25 31h1v1h-1zM26 31h1v1h-1zM27 31h1v1h-1zM28 31h1v1h-1zM29 31h1v1h-1zM30 31h1v1h-1zM31 31h1v1h-1zM32 31h1v1h-1zM33 31h1v1h-1zM34 31h1v1h-1zM35 31h1v1h-1zM4 32h1v1h-1zM6 32h1v1h-1zM7 32h1v1h-1zM9 32h1v1h-1zM10 32h1v1h-1zM13 32h1v1h-1zM14 32h1v1h-1zM17 32h1v1h-1zM19 32h1v1h-1zM20 32h1v1h-1zM21 32h1v1h-1zM24 32h1v1h-1zM25 32h1v1h-1zM27 32h1v1h-1zM28 32h1v1h-1zM29 32h1v1h-1zM32 32h1v1h-1zM33 32h1v1h-1zM34 32h1v1h-1zM35 32h1v1h-1zM36 32h1v1h-1zM40 32h1v1h-1zM12 33h1v1h-1zM13 33h1v1h-1zM16 33h1v1h-1zM17 33h1v1h-1zM18 33h1v1h-1zM20 33h1v1h-1zM22 33h1v1h-1zM24 33h1v1h-1zM25 33h1v1h-1zM28 33h1v1h-1zM31 33h1v1h-1zM32 33h1v1h-1zM36 33h1v1h-1zM37 33h1v1h-1zM39 33h1v1h-1zM40 33h1v1h-1zM4 34h1v1h-1zM5 34h1v1h-1zM6 34h1v1h-1zM7 34h1v1h-1zM8 34h1v1h-1zM9 34h1v1h-1zM10 34h1v1h-1zM14 34h1v1h-1zM15 34h1v1h-1zM16 34h1v1h-1zM17 34h1v1h-1zM21 34h1v1h-1zM24 34h1v1h-1zM26 34h1v1h-1zM28 34h1v1h-1zM30 34h1v1h-1zM31 34h1v1h-1zM32 34h1v1h-1zM34 34h1v1h-1zM36 34h1v1h-1zM37 34h1v1h-1zM39 34h1v1h-1zM40 34h1v1h-1zM4 35h1v1h-1zM10 35h1v1h-1zM15 35h1v1h-1zM16 35h1v1h-1zM17 35h1v1h-1zM20 35h1v1h-1zM23 35h1v1h-1zM24 35h1v1h-1zM25 35h1v1h-1zM26 35h1v1h-1zM28 35h1v1h-1zM29 35h1v1h-1zM32 35h1v1h-1zM36 35h1v1h-1zM37 35h1v1h-1zM39 35h1v1h-1zM40 35h1v1h-1zM4 36h1v1h-1zM6 36h1v1h-1zM7 36h1v1h-1zM8 36h1v1h-1zM10 36h1v1h-1zM12 36h1v1h-1zM14 36h1v1h-1zM16 36h1v1h-1zM17 36h1v1h-1zM18 36h1v1h-1zM19 36h1v1h-1zM24 36h1v1h-1zM26 36h1v1h-1zM27 36h1v1h-1zM28 36h1v1h-1zM29 36h1v1h-1zM32 36h1v1h-1zM33 36h1v1h-1zM34 36h1v1h-1zM35 36h1v1h-1zM36 36h1v1h-1zM37 36h1v1h-1zM4 37h1v1h-1zM6 37h1v1h-1zM7 37h1v1h-1zM8 37h1v1h-1zM10 37h1v1h-1zM13 37h1v1h-1zM15 37h1v1h-1zM19 37h1v1h-1zM21 37h1v1h-1zM23 37h1v1h-1zM24 37h1v1h-1zM26 37h1v1h-1zM28 37h1v1h-1zM29 37h1v1h-1zM30 37h1v1h-1zM31 37h1v1h-1zM35 37h1v1h-1zM36 37h1v1h-1zM39 37h1v1h-1zM4 38h1v1h-1zM6 38h1v1h-1zM7 38h1v1h-1zM8 38h1v1h-1zM10 38h1v1h-1zM12 38h1v1h-1zM13 38h1v1h-1zM17 38h1v1h-1zM18 38h1v1h-1zM21 38h1v1h-1zM23 38h1v1h-1zM24 38h1v1h-1zM26 38h1v1h-1zM28 38h1v1h-1zM30 38h1v1h-1zM31 38h1v1h-1zM36 38h1v1h-1zM37 38h1v1h-1zM38 38h1v1h-1zM39 38h1v1h-1zM40 38h1v1h-1zM4 39h1v1h-1zM10 39h1v1h-1zM13 39h1v1h-1zM14 39h1v1h-1zM17 39h1v1h-1zM18 39h1v1h-1zM19 39h1v1h-1zM21 39h1v1h-1zM22 39h1v1h-1zM24 39h1v1h-1zM25 39h1v1h-1zM26 39h1v1h-1zM27 39h1v1h-1zM28 39h1v1h-1zM29 39h1v1h-1zM30 39h1v1h-1zM31 39h1v1h-1zM32 39h1v1h-1zM35 39h1v1h-1zM36 39h1v1h-1zM39 39h1v1h-1zM4 40h1v1h-1zM5 40h1v1h-1zM6 40h1v1h-1zM7 40h1v1h-1zM8 40h1v1h-1zM9 40h1v1h-1zM10 40h1v1h-1zM12 40h1v1h-1zM14 40h1v1h-1zM15 40h1v1h-1zM20 40h1v1h-1zM21 40h1v1h-1zM23 40h1v1h-1zM25 40h1v1h-1zM28 40h1v1h-1zM29 40h1v1h-1zM31 40h1v1h-1zM32 40h1v1h-1zM34 40h1v1h-1zM37 40h1v1h-1zM39 40h1v1h-1zM40 40h1v1h-1z" fill="#1D2E17"/></svg><p class="lbl" style="margin-top:12px;text-align:center">Mit dem Handy scannen</p></div>
     </div>
-  </footer>
-</div>
+    <div>
+      <div class="steps">
+        <div><p class="lbl">Schritt 1</p><p class="h">Woche&nbsp;wählen</p><p class="mut">Such dir die Woche aus, in der du abholen willst.</p></div>
+        <div><p class="lbl">Schritt 2</p><p class="h">Gemüse&nbsp;wählen</p><p class="mut">Tipp auf das Gemüse, das du willst. Der Preis steht dabei.</p></div>
+        <div><p class="lbl">Schritt 3</p><p class="h">Senden</p><p class="mut">Per WhatsApp an Werner. Abholen am Mittwoch, 9–13 Uhr.</p></div>
+      </div>
+      <a class="btn bd" href="bestellung.html" style="margin-top:36px">Zur Bestellliste →</a>
+      <div style="margin-top:56px;background:var(--ink);color:#FFFFFF;padding:32px 36px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px">
+        <div><p class="lbl" style="color:var(--sun);margin-bottom:10px">Gemüsekiste im Abo</p><p class="h" style="font-size:26px;margin-bottom:6px">Jede Woche eine&nbsp;Kiste?</p><p style="margin:0;color:#DCE3D3;font-size:16px">Kleine Kiste: € 15,00 pro Woche. Du holst sie jeden Mittwoch im Garten ab.</p></div>
+        <a class="btn bw" href="bestellung.html">Kiste anfragen →</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-<script>
-(function(){
-  var m = new Date().getMonth() + 1;
-  var jetzt = (m>=3&&m<=5)?0:(m>=6&&m<=8)?1:(m>=9&&m<=11)?2:-1;
-  var daten = [
-    {name:'Frühling', gemuese:['Radieschen','Spinat','Kohlrabi','Pflücksalat','Rucola','Frühzwiebeln','Erbsen']},
-    {name:'Sommer', gemuese:['Gurken','Buschbohnen','Karotten','Mangold','Kopfsalat','Romanasalat','Erdbeeren']},
-    {name:'Herbst', gemuese:['Rote Rüben','Chinakohl','Endivie','Feldsalat','Asiasalate','Spinat','Karotten']}
-  ];
-  var txt = jetzt === -1 ? 'Im Winter ruht der Garten. Ab März gibt es wieder frisches Gemüse.' : 'Wir ernten, was gerade reif ist. Die aktuelle Saison ist hervorgehoben.';
-  document.getElementById('saisonText').textContent = txt;
-  var grid = document.getElementById('saisonGrid');
-  daten.forEach(function(s, i){
-    var an = i === jetzt;
-    var card = document.createElement('div');
-    card.style.cssText = an ? 'padding:26px;border-radius:20px;background:#2f5a1c;color:#f7f1e3;border:1px solid #2f5a1c' : 'padding:26px;border-radius:20px;background:#fffdf7;color:#2f5a1c;border:1px solid #e3d8bf';
-    var head = document.createElement('div');
-    head.style.cssText = 'display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:14px';
-    var h = document.createElement('h3'); h.className='serif'; h.style.cssText='margin:0;font-size:1.35rem;font-weight:400'; h.textContent = s.name; head.appendChild(h);
-    if (an) { var b = document.createElement('span'); b.style.cssText='font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:#f4c95d;color:#2b3523;padding:4px 10px;border-radius:999px'; b.textContent='Jetzt'; head.appendChild(b); }
-    card.appendChild(head);
-    var chips = document.createElement('div'); chips.style.cssText='display:flex;flex-wrap:wrap;gap:8px';
-    s.gemuese.forEach(function(g){ var c=document.createElement('span'); c.style.cssText = an ? 'font-size:14px;padding:5px 12px;border-radius:999px;background:#4f7a33;color:#f7f1e3' : 'font-size:14px;padding:5px 12px;border-radius:999px;background:#e7efd6;color:#2b3523'; c.textContent=g; chips.appendChild(c); });
-    card.appendChild(chips); grid.appendChild(card);
-  });
-})();
-</script>
+<section id="warum" class="white"><div class="wrap pad split">
+  <div class="sticky" style="position:sticky;top:110px">
+    <p class="eb">Im Garten</p>
+    <h2 class="h" style="font-size:44px;margin-bottom:28px">Wie wächst dein&nbsp;Gemüse?</h2>
+    <img src="bilder/garten.jpg" alt="Gartenweg mit Lavendel und Rosen" width="800" height="600" style="width:100%;height:auto;aspect-ratio:4/3;object-fit:cover">
+  </div>
+  <div>
+    <div class="spec"><span><svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg></span><span><b>Ohne Chemie</b><span class="mut">Der Boden wird mit Gründüngung, Mulch und Pflanzenkohle versorgt.</span></span></div>
+    <div class="spec"><span><svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="8" r="2"/><circle cx="14" cy="16" r="3.5"/><circle cx="6.5" cy="17" r="1.5"/></svg></span><span><b>Pflanzenkohle im Boden</b><span class="mut">Werner stellt die Pflanzenkohle in Niederwölz selbst her.</span></span></div>
+    <div class="spec"><span><svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V11"/><path d="M12 13c-5 0-7-3-7-7 4 0 7 2 7 7z"/><path d="M12 11c0-4 3-6 7-6 0 4-2 6-7 6z"/></svg></span><span><b>Bio-Saatgut</b><span class="mut">Die Sorten kommen von Bingenheimer Saatgut und ReinSaat. Samenfeste Sorten aus ökologischer Züchtung.</span></span></div>
+    <div class="spec"><span><svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15"/><path d="M4 10h16M9 3v4M15 3v4"/></svg></span><span><b>Von Mai bis Oktober</b><span class="mut">Geerntet wird laut Anbauplan von Anfang Mai bis Ende Oktober. Im Winter ruht der Garten.</span></span></div>
+    <div class="spec"><span><svg aria-hidden="true" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span><b>Kurzer Weg</b><span class="mut">Du holst direkt im Garten ab: Hinterbichl 110, Niederwölz.</span></span></div>
+    <a class="btn bd" href="bestellung.html" style="margin-top:32px">Gemüse bestellen →</a>
+  </div>
+</div></section>
+
+
+<section id="hoftag" class="dark"><div class="wrap pad hof" style="display:grid;grid-template-columns:7fr 5fr;gap:56px;align-items:center">
+  <div>
+    <p class="eb" style="color:var(--soft)">Abholung</p>
+    <h2 class="h" style="font-size:44px;margin-bottom:20px">Wann holst du ab?</h2>
+    <p style="margin:0 0 32px;font-size:19px;color:#DCE3D3;max-width:560px">Deine Bestellung liegt im Garten bereit. Komm vorbei, nimm sie mit und schau dir an, wo sie gewachsen ist.</p>
+    <a class="btn bs" href="https://maps.app.goo.gl/j7qypQ11bANTvcZV8" target="_blank" rel="noopener">Weg zum Garten →</a>
+  </div>
+  <div style="border:1px solid #3A4E33;padding:32px">
+    <p class="lbl" style="color:var(--sun);margin-bottom:12px">Hoftag</p>
+    <p class="h" style="font-size:40px;margin-bottom:4px">Mittwoch</p>
+    <p class="h" style="font-size:26px;color:var(--soft);margin-bottom:22px">9 bis 13 Uhr</p>
+    <p style="margin:0;font-size:17px;color:#DCE3D3">Hinterbichl 110<br>8831 Niederwölz</p>
+  </div>
+</div></section>
+
+<section id="ueber" class="wrap pad split s48" style="align-items:center">
+  <img src="bilder/werner.jpg" alt="Porträt von Werner Hansmann" width="480" height="600" style="width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:top;background:#E9E4D4">
+  <div>
+    <p class="eb">Über mich</p>
+    <h2 class="h" style="font-size:44px;margin-bottom:24px">Bester Boden für bestes&nbsp;Gemüse</h2>
+    <p style="margin:0 0 20px;font-size:19px;max-width:640px">Werner ist Experte für gesunde Böden. In Niederwölz stellt er Pflanzenkohle her – und baut im eigenen Naturgarten das Gemüse an, das du hier bestellst.</p>
+    <p class="mut" style="margin:0 0 32px;font-size:17px;max-width:640px">Die Pflanzenkohle gibt es auch für deinen Garten: <a href="https://www.mrnongnong.at" target="_blank" rel="noopener" style="font-weight:600">mrnongnong.at</a></p>
+    <a class="btn bd" href="tel:+436608743416"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg> Frag Werner: +43 660 874 3416</a>
+  </div>
+</section>
+
+<section id="fragen" style="border-top:1px solid var(--line)"><div class="wrap pad split s48">
+  <div><p class="eb">Fragen &amp; Antworten</p><h2 class="h" style="font-size:40px">Kurz gefragt</h2></div>
+  <div style="border-top:1px solid var(--ink)">
+    <details class="q" open><summary>Wann und wo hole ich ab?<span class="pl" aria-hidden="true">+</span></summary><p>Jeden Mittwoch von 9 bis 13 Uhr im Garten: Hinterbichl 110, 8831 Niederwölz.</p></details>
+    <details class="q"><summary>Wie bestelle ich?<span class="pl" aria-hidden="true">+</span></summary><p>Öffne die Bestellliste, wähle Woche und Gemüse und tippe auf „Senden“. Die Bestellung geht als WhatsApp-Nachricht an Werner.</p></details>
+    <details class="q"><summary>Gibt es eine Gemüsekiste im&nbsp;Abo?<span class="pl" aria-hidden="true">+</span></summary><p>Ja. Die kleine Kiste kostet € 15,00 pro Woche. Du fragst sie über die Bestellliste an.</p></details>
+    <details class="q"><summary>Liefert ihr auch?<span class="pl" aria-hidden="true">+</span></summary><p>Auf Anfrage. Die Zustellung kostet € 3,50. Wähle sie in der Bestellliste aus.</p></details>
+    <details class="q"><summary>Ab wann gibt es Gemüse?<span class="pl" aria-hidden="true">+</span></summary><p>Laut Anbauplan ab Anfang Mai 2027. Die letzte Ernte ist Ende Oktober.</p></details>
+  </div>
+</div></section>
+</main>
+
+<footer class="ft"><div class="wrap" style="padding-top:88px;padding-bottom:40px">
+  <div class="fg">
+    <div><h2 class="h" style="font-size:24px;margin-bottom:12px">Fragen?</h2><p class="mut" style="margin-bottom:18px">Werner hilft dir persönlich weiter.</p><a class="btn bw" href="https://wa.me/436608743416" target="_blank" rel="noopener">WhatsApp an Werner</a></div>
+    <div><p class="eb" style="color:var(--soft)">Hoftag</p><p>Hinterbichl 110<br>8831 Niederwölz<br>Mittwoch · 9–13 Uhr</p></div>
+    <div><p class="eb" style="color:var(--soft)">Kontakt</p><p><a href="tel:+436608743416">+43 660 874 3416</a>dablju.hansmann@gmail.com</p></div>
+    <div><p class="eb" style="color:var(--soft)">Mehr</p><p><a href="bestellung.html">Bestellliste</a><a href="https://www.mrnongnong.at" target="_blank" rel="noopener">Pflanzenkohle</a><a href="impressum.html">Impressum</a></p></div>
+  </div>
+  <p aria-hidden="true" class="h big" style="margin:44px 0 28px;font-size:110px;line-height:.92;letter-spacing:-0.02em">Frisch aus Niederwölz.</p>
+  <div class="fb mut" style="display:flex;justify-content:space-between;gap:24px;font-size:14px"><span>© WölzerTaler · Naturgarten Niederwölz</span><a href="impressum.html" style="color:var(--soft)">Impressum</a></div>
+</div></footer>
 </body>
 </html>
