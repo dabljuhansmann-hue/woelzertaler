@@ -115,15 +115,65 @@ pre{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px s
 [hidden]{display:none!important}
 .foot{font-size:12.5px;color:var(--muted);text-align:center;margin:4px 0 0}
 input[type=text],input[type=tel],textarea{font-size:16px}
+
+/* ===== Katalog-Stil wie die Startseite (ohne fremde Schriften) ===== */
+:root,:root[data-theme="dark"]{--bg:#F4F1E6;--card:#FFFFFF;--ink:#1D2E17;--muted:#585C4C;--line:#E3DCC8;--accent:#1D2E17;--accent-ink:#FFFFFF;--soft:#F1EEE2;--hero:#FFFFFF;--hill:#C9D3BC;--sun:#F2C14E;--leaf:#4E7A34;--tile:#EDEAE0;--warn:#A8401C;--warnbg:#F7E0D3;--display:"Arial Black","Helvetica Neue",Arial,system-ui,sans-serif;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#F4F1E6;--card:#FFFFFF;--ink:#1D2E17;--muted:#585C4C;--line:#E3DCC8;--accent:#1D2E17;--accent-ink:#FFFFFF;--soft:#F1EEE2;--hero:#FFFFFF;--hill:#C9D3BC;--sun:#F2C14E;--leaf:#4E7A34;--tile:#EDEAE0;--warn:#A8401C;--warnbg:#F7E0D3;color-scheme:light}}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+.wrap *,.dock *{border-radius:0!important}
+.wrap .badge,.hofzeile i{border-radius:999px!important}
+h1,h2,h3{font-family:var(--display);font-weight:900;text-transform:uppercase;letter-spacing:0;line-height:1.08}
+.card h2{font-size:22px}
+.hero{background:#FFFFFF;border:1px solid var(--line);gap:8px}
+.hero h1{font-size:clamp(26px,7vw,36px);font-weight:900}
+.home{display:inline-flex;align-items:center;min-height:44px;font-weight:700;color:var(--ink);text-decoration:none;font-size:14px;position:relative;align-self:flex-start;margin:-6px 0 -4px}
+.home:hover{text-decoration:underline}
+.hofzeile{background:var(--soft);border:1px solid var(--line)}
+.frist{margin:2px 0 0;font-size:14.5px;background:var(--sun);color:var(--ink);padding:9px 12px;align-self:stretch;position:relative}
+.saison{margin:0;font-size:14.5px;border:1px solid var(--ink);padding:9px 12px;position:relative}
+.card{box-shadow:none;border:1px solid var(--line)}
+.opt,.wo,.veg{border-width:1px}
+.opt:has(input:checked),.wo[aria-pressed="true"],.veg.has{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink);background:var(--soft)}
+.wo .kw{font-weight:900;font-size:18px}
+.wo .sp{color:var(--warn);font-weight:600}
+.wo .n{background:var(--tile)}
+.steps .bar{height:4px}
+.steps .lbl{text-transform:uppercase;letter-spacing:.02em;font-size:11px;white-space:nowrap}
+.stepper button{border-color:var(--line)}
+.btn{font-weight:700}
+.btn.sec{border-width:1px;border-color:var(--ink)}
+.wa{background:#1f7a4a}
+.dock{border-top:1px solid var(--ink);box-shadow:none}
+.dock .info b{font-weight:900}
+.sum tr.tot td{font-weight:900}
+.spaet{background:var(--warnbg);border-left:4px solid var(--warn);padding:10px 12px;font-size:14.5px;margin:0}
+.spaet:empty{display:none}
+.starts{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.st{border:1px solid var(--line);background:var(--bg);padding:10px 12px;text-align:left;min-height:56px;display:flex;flex-direction:column;gap:2px}
+.st b{font-family:var(--display);font-weight:900;font-size:17px}
+.st small{color:var(--muted);font-size:14px}
+.st[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink);background:var(--soft)}
+.aboinfo{border:1px solid var(--ink);background:var(--soft);padding:14px 16px;display:flex;flex-direction:column;gap:6px;font-size:15px}
+.aboinfo b{font-size:16px}
+.aboinfo ul{margin:4px 0 0;padding-left:18px}
+.aboinfo li{margin:2px 0}
+.edit{min-height:44px}
+details summary{min-height:44px;display:flex;align-items:center}
+details p,.hint,pre{font-size:14px}
+.wo .tx small{font-size:14px}
+.btn.sec[aria-disabled=true]{opacity:.45}
 </style>
 
 <div class="wrap">
   <header class="hero">
     <div class="ill" role="img" aria-label="Schriftzug „Wölzertaler Naturgarten Niederwölz“ über einem Gemüsegarten"></div>
+    <a class="home" href="https://dabljuhansmann-hue.github.io/woelzertaler/">← Zur Startseite</a>
     <span class="kick" id="ort"></span>
-    <h1>WölzerTaler</h1>
-    <p>Gemüse frisch aus dem Garten, saisonal geerntet. In vier kurzen Schritten bestellst du per WhatsApp.</p>
+    <h1>Gemüse bestellen</h1>
+    <p>In vier kurzen Schritten bestellt. Die Bestellung geht per WhatsApp oder SMS an Werner.</p>
     <span class="hofzeile" id="hofzeile" hidden><i></i><span></span></span>
+    <p class="frist"><b>Bestellschluss:</b> Dienstag, 12 Uhr – für den Hoftag am Mittwoch.</p>
+    <p class="saison" id="saisonNote" hidden></p>
     <a class="karte" id="karte1" href="#" target="_blank" rel="noopener" hidden><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Garten auf der Karte</a>
   </header>
 
@@ -134,12 +184,25 @@ input[type=text],input[type=tel],textarea{font-size:16px}
     <h2 tabindex="-1">Was und für wann?</h2>
     <div class="wahl" role="radiogroup" aria-label="Art der Bestellung">
       <label class="opt"><input type="radio" name="art" value="einzel" checked><span><b>Einzelbestellung</b><small>Du suchst dir das Gemüse selbst aus.</small></span></label>
-      <label class="opt"><input type="radio" name="art" value="abo"><span><b>Gemüsekiste im Abo</b><small>Jede Woche eine Kiste zum festen Preis. Du sparst bis zu <span class="rabatt"></span> € gegenüber dem Einkauf ab Hof.</small></span></label>
+      <label class="opt"><input type="radio" name="art" value="abo"><span><b>Gemüsekiste im Saison-Abo</b><small>Jede Woche eine Kiste, die ganze Saison lang. Du sparst bis zu <span class="rabatt"></span>&nbsp;€ pro Woche gegenüber dem Einkauf ab Hof.</small></span></label>
+    </div>
+    <p class="note2" id="extraNote">Du hast schon ein Abo? Bestell Extras einfach hier dazu – sie kommen mit deiner Kiste.</p>
+    <div id="aboBox" hidden>
+      <h3 style="font-size:18px;margin:4px 0 8px" id="startH">Ab wann startet dein Abo?</h3>
+      <div class="starts" id="starts" role="group" aria-labelledby="startH"></div>
+      <button class="mehr" id="mehrStart" type="button">Spätere Startwochen zeigen</button>
+      <h3 style="font-size:18px;margin:14px 0 8px" id="zahlH">Wie möchtest du zahlen?</h3>
+      <div class="wahl" role="radiogroup" aria-labelledby="zahlH">
+        <label class="opt"><input type="radio" name="zahl" value="woche" checked><span><b>Wöchentlich bei der Abholung</b><small id="zahlWoTxt"></small></span></label>
+        <label class="opt"><input type="radio" name="zahl" value="saison"><span><b>Ganze Saison im Voraus</b><small id="zahlSaTxt"></small></span></label>
+      </div>
+      <div class="aboinfo" id="aboInfo" style="margin-top:12px"></div>
     </div>
     <h3 style="font-size:18px;margin-top:4px" id="woH">Woche wählen</h3>
     <div class="wochen" id="wochen" role="group" aria-labelledby="woH"></div>
     <button class="mehr" id="mehr" type="button">Weitere Wochen zeigen</button>
     <p class="note2" id="wochenNote" aria-live="polite"></p>
+    <p class="spaet" id="spaet1" aria-live="polite"></p>
   </section>
 
   <!-- Schritt 2 -->
@@ -176,14 +239,15 @@ input[type=text],input[type=tel],textarea{font-size:16px}
       <summary>Datenschutzhinweis lesen</summary>
       <p><b>Verantwortlicher:</b> <span id="dsName"></span>, <span id="dsOrt"></span>. Kontakt: <span id="dsKontakt"></span></p>
       <p><b>Welche Daten, wofür:</b> Name, Telefonnummer, bei Zustellung deine Adresse, deine Bestellung und dein Kommentar. Ich verwende sie nur, um deine Bestellung zu bestätigen, vorzubereiten, zu übergeben bzw. zuzustellen und dich dazu zu kontaktieren (Art. 6 Abs. 1 lit. b DSGVO, Durchführung des Kaufvertrags bzw. vorvertragliche Maßnahmen).</p>
-      <p><b>Wie die Daten zu mir kommen:</b> Diese Seite speichert deine Eingaben nicht auf einem Server und setzt keine Cookies zur Auswertung. Erst wenn du auf „Per WhatsApp senden“ tippst, wird die Nachricht in deiner WhatsApp-App vorbereitet und von dir gesendet. Dabei gelten die Datenschutzbestimmungen von WhatsApp (Meta Platforms Ireland, mit möglicher Datenübermittlung in die USA). Diese Seite lädt keine Schriften oder Skripte von Drittanbietern nach. Die Plattform, auf der die Seite gehostet wird, kann beim Aufruf technisch notwendige Daten (z. B. die IP-Adresse) verarbeiten.</p>
+      <p><b>Wie die Daten zu mir kommen:</b> Diese Seite speichert deine Eingaben nicht auf einem Server und setzt keine Cookies zur Auswertung. Erst wenn du auf „Per WhatsApp senden“ oder „Per SMS senden“ tippst, wird die Nachricht in deiner App vorbereitet und von dir gesendet. Bei WhatsApp gelten die Datenschutzbestimmungen von WhatsApp (Meta Platforms Ireland, mit möglicher Datenübermittlung in die USA). Diese Seite lädt keine Schriften oder Skripte von Drittanbietern nach. Die Plattform, auf der die Seite gehostet wird, kann beim Aufruf technisch notwendige Daten (z. B. die IP-Adresse) verarbeiten.</p>
       <p><b>Speicherdauer:</b> Ich lösche deine Daten, sobald die Bestellung abgewickelt ist und keine gesetzlichen Aufbewahrungspflichten bestehen (für Rechnungen und Belege in Österreich in der Regel 7 Jahre). Bei einem Abo, solange es läuft.</p>
       <p><b>Deine Rechte:</b> Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Widerspruch und Datenübertragbarkeit. Schreib mir einfach. Beschwerden kannst du an die österreichische Datenschutzbehörde richten (dsb.gv.at).</p>
       <p>Name und Telefonnummer sind für die Bestellung erforderlich, die Adresse nur bei Zustellung. Ohne diese Angaben kann ich die Bestellung nicht bearbeiten.</p>
     </details>
     <a class="btn wa" id="waBtn" href="#" target="_blank" rel="noopener" aria-disabled="true"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.6-5.2A8.5 8.5 0 1 1 21 11.5z"/></svg>Per WhatsApp senden</a>
+    <p class="spaet" id="spaet4"></p>
     <p class="hint" id="waHinweis"></p>
-    <div class="row"><button class="btn sec" id="copyBtn" type="button">Text kopieren</button></div>
+    <div class="row"><a class="btn sec" id="smsBtn" href="#" aria-disabled="true">Per SMS senden</a><button class="btn sec" id="copyBtn" type="button">Text kopieren</button></div>
     <details><summary>Vorschau der Nachricht</summary><pre id="vorschau"></pre></details>
     <p class="hint">Deine Bestellung gilt, sobald ich sie bestätige. Ich melde mich per WhatsApp oder Telefon.</p>
   </section>
@@ -249,8 +313,20 @@ const vorbei = !kommende.length;
 const wochenListe = kommende;
 wIdx = vorbei ? 0 : (wochenListe.find(x => x.w.crops.length) || wochenListe[0]).i;
 function hofTag(w){ if(!D.hof) return null; const d = new Date((w.start + (D.hof.tag || 5) - 1) * 86400000); return d; }
+function frist(w){ const d = hofTag(w); return d ? new Date(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate() - 1, 12, 0, 0) : null; }
+function spaet(w){ const f = frist(w); return !!f && jetzt > f; }
+const SPAET_TXT = 'Der Bestellschluss für diese Woche war Dienstag um 12 Uhr. Schick deine Bestellung trotzdem: Ich schaue, dass auch kurzfristige Bestellungen noch mitkommen, und melde mich bei dir.';
+function aboStartFrueh(){ const x = wochenListe.find(o => !spaet(o.w)); return x ? x.i : -1; }
+let aboWahl = -1, alleStarts = false;
+function aboStart(){ const f = aboStartFrueh(); return f < 0 ? -1 : Math.max(f, aboWahl); }
+function aboWochen(){ const s = aboStart(); return s < 0 ? [] : D.weeks.slice(s); }
+const kis = n => n + (n === 1 ? ' Kiste' : ' Kisten');
+function zahl(){ const r = document.querySelector('input[name=zahl]:checked'); return r ? r.value : 'woche'; }
+function aboPreis(){ const ws = aboWochen(), p = D.abo[kiste()] || D.abo.klein; return {n: ws.length, p, voll: ws.length * p, voraus: (ws.length > 1 ? ws.length - 1 : ws.length) * p, gratis: ws.length > 1}; }
 function hofTxt(w, kurz){ const d = hofTag(w); if(!d) return ''; return `${kurz ? D.hof.tagName.slice(0, 2) : D.hof.tagName}, ${d.getUTCDate()}. ${MN[d.getUTCMonth()]}${D.hof.von ? ', ' + D.hof.vonTxt + '–' + D.hof.bisTxt + ' Uhr' : ''}`; }
-$('ort').textContent = 'Naturgarten · ' + D.ortKurz;
+$('ort').textContent = 'Naturgarten ' + D.ortKurz;
+(function(){ const erste = wochenListe.find(x => x.w.crops.length); if(!erste || !D.hof) return; const d = hofTag(erste.w);
+  if((d - jetzt) / 86400000 > 14){ $('saisonNote').hidden = false; $('saisonNote').textContent = `Die Saison beginnt am ${D.hof.tagName}, ${d.getUTCDate()}. ${MN[d.getUTCMonth()]} ${d.getUTCFullYear()}. Du kannst schon jetzt vorbestellen.`; } })();
 if(D.karte){ ['karte1','karte2'].forEach(k => $(k).href = D.karte); $('karte1').hidden = false; $('karte2').hidden = false; }
 if(D.hof){ $('hofzeile').hidden = false; $('hofzeile').querySelector('span').textContent = `Abholung jeden ${D.hof.tagName}, ${D.hof.vonTxt}–${D.hof.bisTxt} Uhr${D.hof.ort ? ' · ' + D.hof.ort : ''}`; }
 $('dsKontakt').textContent = D.kontakt || 'über die WhatsApp-Nummer, an die du deine Bestellung sendest';
@@ -259,7 +335,8 @@ $('dsName').textContent = D.verantwortlich; $('dsOrt').textContent = D.ort; $('z
 document.querySelectorAll('.rabatt').forEach(e => e.textContent = D.ersparnis);
 const KISTEN = ['klein', 'gross'].filter(k => D.abo[k] > 0);
 $('kisten').innerHTML = KISTEN.map((k, i) => `<label class="opt"><input type="radio" name="kiste" value="${k}" ${i === 0 ? 'checked' : ''}><span><b>Kiste ${k === 'klein' ? 'klein' : 'groß'} · ${eur(D.abo[k])} € pro Woche</b><small>${k === 'klein' ? 'für 1 bis 2 Personen' : 'für 3 bis 4 Personen'}. Ware im Wert von bis zu ${eur(D.abo[k] + D.ersparnis)} € ab Hof.</small></span></label>`).join('');
-$('kistenHint').textContent = `Die Kiste wird jede Woche mit dem gefüllt, was gerade erntereif ist: ${KISTEN.length > 1 ? 'höchstens 6 (klein) bzw. 8 (groß)' : 'höchstens ' + (KISTEN[0] === 'gross' ? 8 : 6)} verschiedene Gemüse. Wegen Start, Pausen und Bezahlung melde ich mich bei dir. Wünsche wie „keine Zwiebeln“ schreibst du im nächsten Schritt dazu.`;
+function kistenHint(){ $('kistenHint').textContent = `Die Kiste wird jede Woche mit dem gefüllt, was gerade erntereif ist: ${KISTEN.length > 1 ? 'höchstens 6 (klein) bzw. 8 (groß)' : 'höchstens ' + (KISTEN[0] === 'gross' ? 8 : 6)} verschiedene Gemüse. ${zahl() === 'saison' ? 'Bezahlt hast du die ganze Saison im Voraus. ' : 'Bezahlt wird wöchentlich bei der Abholung. '}Bis zu 3 Wochen Urlaubspause pro Saison sind möglich. Wünsche wie „keine Zwiebeln“ schreibst du im nächsten Schritt dazu.`; }
+kistenHint();
 
 function art(){ return document.querySelector('input[name=art]:checked').value; }
 function lief(){ return document.querySelector('input[name=lief]:checked').value; }
@@ -267,15 +344,38 @@ function woche(){ return D.weeks[wIdx] || D.weeks[0]; }
 function kiste(){ const r = document.querySelector('input[name=kiste]:checked'); return r ? r.value : KISTEN[0]; }
 
 // ---------- Schritt 1: Wochen ----------
+function renderAbo(){
+  const abo = art() === 'abo';
+  $('woH').hidden = abo; $('wochen').hidden = abo; $('extraNote').hidden = abo || vorbei; $('aboBox').hidden = !abo;
+  if(!abo){ renderWochen(); return; }
+  $('mehr').hidden = true;
+  const f = aboStartFrueh();
+  if(f < 0){ $('starts').innerHTML = ''; $('mehrStart').hidden = true; $('aboInfo').innerHTML = '<b>Für diese Saison ist kein Abo-Start mehr möglich.</b>'; return; }
+  const moegl = D.weeks.map((w, i) => ({w, i})).filter(o => o.i >= f);
+  const zeig = alleStarts ? moegl : moegl.slice(0, 6), s = aboStart();
+  $('starts').innerHTML = zeig.map(({w, i}) => { const d = hofTag(w); return `<button type="button" class="st" data-start="${i}" aria-pressed="${i === s}"><b>KW ${w.kw}</b><small>ab ${D.hof.tagName.slice(0, 2)}, ${d.getUTCDate()}. ${MN[d.getUTCMonth()]}</small><small>${kis(D.weeks.length - i)}</small></button>`; }).join('');
+  $('mehrStart').hidden = alleStarts || moegl.length <= 6;
+  wIdx = s;
+  const P = aboPreis(), ws = aboWochen(), a = ws[0], z = ws[ws.length - 1];
+  $('zahlWoTxt').textContent = `${eur(P.p)} € je Kiste, bezahlt jeden Mittwoch. Zusammen ${eur(P.voll)} € für ${kis(P.n)}.`;
+  $('zahlSaTxt').textContent = P.gratis ? `Eine Kiste geschenkt: ${eur(P.voraus)} € statt ${eur(P.voll)} € für ${kis(P.n)}.` : `${eur(P.voraus)} € für ${kis(P.n)}.`;
+  const voraus = zahl() === 'saison';
+  $('aboInfo').innerHTML = `<b>Dein Abo: KW ${a.kw} bis Saisonende KW ${z.kw} · ${kis(P.n)}</b>
+    <span>Erste Kiste: ${esc(hofTxt(a))}. Letzte Kiste: ${esc(hofTxt(z).split(',').slice(0, 2).join(','))}.</span>
+    <ul>${voraus ? `<li>Du zahlst einmal ${eur(P.voraus)} € im Voraus${P.gratis ? ', eine Kiste ist geschenkt' : ''}.</li><li>Pausierte Wochen bekommst du als Guthaben für Extras.</li><li>Fällt eine Woche wegen Ernteausfall aus, wird dir die Kiste gutgeschrieben.</li>` : `<li>Du zahlst wöchentlich bei der Abholung, je Kiste ${eur(P.p)} €.</li>`}<li>Urlaub: bis zu 3 Wochen pro Saison pausieren. Sag mir bis Dienstag, 12 Uhr der Woche davor Bescheid.</li><li>Extras bestellst du jederzeit zusätzlich über die Einzelbestellung.</li></ul>`;
+}
 function renderWochen(){
+  if(art() === 'abo') return;
   if(vorbei){ $('wochen').innerHTML = `<p class="leer">Die Gartensaison ${D.weeks.length ? D.weeks[0].iso.slice(0, 4) : ''} ist vorbei. Danke fürs Mitmachen! Im Frühjahr gibt es hier wieder frisches Gemüse. Für Fragen erreichst du mich unter ${esc(D.waAnzeige || D.kontakt || '')}.</p>`; $('mehr').hidden = true; $('weiter').hidden = true; return; }
   const liste = alleWochen ? wochenListe : wochenListe.slice(0, 6);
   $('wochen').innerHTML = liste.map(({w, i}) => { const s = new Date(w.start * 86400000), e = new Date((w.start + 6) * 86400000);
     const zeit = `${s.getUTCDate()}.${s.getUTCMonth() !== e.getUTCMonth() ? (s.getUTCMonth() + 1) + '.' : ''}–${e.getUTCDate()}. ${MN[e.getUTCMonth()]}`;
-    return `<button type="button" class="wo" data-w="${i}" aria-pressed="${i === wIdx}"><span class="kw">KW ${w.kw}</span><span class="tx"><b>${zeit}</b><small>${D.hof ? 'Abholung ' + esc(hofTxt(w, true)) : ''}</small></span><span class="n">${w.crops.length ? w.crops.length + ' Gemüse' : 'noch nichts'}</span></button>`; }).join('');
+    return `<button type="button" class="wo" data-w="${i}" aria-pressed="${i === wIdx}"><span class="kw">KW ${w.kw}</span><span class="tx"><b>${zeit}</b><small>${D.hof ? 'Abholung ' + esc(hofTxt(w, true)) : ''}</small>${spaet(w) ? '<small class="sp">Bestellschluss vorbei – kurzfristig noch möglich</small>' : ''}</span><span class="n">${w.crops.length ? w.crops.length + ' Gemüse' : 'noch nichts'}</span></button>`; }).join('');
   $('mehr').hidden = alleWochen || wochenListe.length <= 6;
 }
 $('wochen').addEventListener('click', e => { const b = e.target.closest('[data-w]'); if(!b) return; wIdx = +b.dataset.w; renderWochen(); const nb = $('wochen').querySelector(`[data-w="${wIdx}"]`); if(nb) nb.focus(); pruneQty(); refresh(); });
+$('starts').addEventListener('click', e => { const b = e.target.closest('[data-start]'); if(!b) return; aboWahl = +b.dataset.start; renderAbo(); refresh(); const nb = $('starts').querySelector(`[data-start="${aboWahl}"]`); if(nb) nb.focus(); });
+$('mehrStart').addEventListener('click', () => { alleStarts = true; renderAbo(); });
 $('mehr').addEventListener('click', () => { alleWochen = true; renderWochen(); const b = $('wochen').querySelectorAll('.wo')[6]; if(b) b.focus(); });
 
 // ---------- Schritt 2: Gemüse oder Kiste ----------
@@ -284,8 +384,8 @@ function pruneQty(){ const w = woche(), weg = []; Object.keys(qty).forEach(id =>
 function renderSchritt2(){
   const w = woche(), abo = art() === 'abo';
   $('h2').textContent = abo ? 'Welche Kiste?' : 'Was darf es sein?';
-  $('sub2').textContent = abo ? `Start ab KW ${w.kw}.` : (w.crops.length ? `KW ${w.kw}: ${w.crops.length} Gemüse frisch aus dem Garten. Tippe auf ein Bild, um es in den Korb zu legen.` : '');
-  $('kisten').hidden = !abo; $('kistenHint').hidden = !abo; $('grid').hidden = abo;
+  $('sub2').textContent = abo ? `Saison-Abo ab KW ${w.kw} bis Saisonende, ${kis(aboWochen().length)}.` : (w.crops.length ? `KW ${w.kw}: ${w.crops.length} Gemüse frisch aus dem Garten. Tippe auf ein Bild, um es in den Korb zu legen.` : '');
+  kistenHint(); $('kisten').hidden = !abo; $('kistenHint').hidden = !abo; $('grid').hidden = abo;
   if(!abo){
     $('grid').innerHTML = w.crops.length ? w.crops.map(id => { const m = D.crops[id]; return `<div class="veg" data-id="${id}">
       <button class="tile" type="button" data-act="add" aria-label="${esc(m.name)} in den Korb">${grafik(id)}<span class="badge"></span></button>
@@ -309,12 +409,12 @@ function baue(){
   if(!modeAbo){
     w.crops.forEach(id => { const q = qty[id] || 0; if(q > 0){ const m = D.crops[id], s = Math.round(q * m.preis * 100) / 100; summe += s; anzahl++;
       zeilen.push(`${mengeTxt(q)} × ${m.name} (${m.einheit}) = ${eur(s)} €`); htmlz.push(`<tr><td>${mengeTxt(q)} × ${esc(m.name)} <span class="hint">(${esc(m.einheit)})</span></td><td>${eur(s)} €</td></tr>`); } });
-  } else { const k = kiste(), p = D.abo[k]; summe = p; anzahl = 1; htmlz.push(`<tr><td>Abo Kiste ${k === 'klein' ? 'klein' : 'groß'} <span class="hint">pro Woche</span></td><td>${eur(p)} €</td></tr>`); }
-  if(zust){ summe += D.zustellung; htmlz.push(`<tr><td>Zustellung${modeAbo ? ' (je Lieferung)' : ''}</td><td>${eur(D.zustellung)} €</td></tr>`); }
+  } else { const k = kiste(), P = aboPreis(), vo = zahl() === 'saison'; summe = vo ? P.voraus : P.p; anzahl = 1; htmlz.push(vo ? `<tr><td>Saison-Abo Kiste ${k === 'klein' ? 'klein' : 'groß'} <span class="hint">${kis(P.n)}, im Voraus${P.gratis ? ', 1 Kiste geschenkt' : ''}</span></td><td>${eur(P.voraus)} €</td></tr>` : `<tr><td>Saison-Abo Kiste ${k === 'klein' ? 'klein' : 'groß'} <span class="hint">pro Woche, ${P.n} ${P.n === 1 ? 'Woche' : 'Wochen'}</span></td><td>${eur(P.p)} €</td></tr>`); }
+  if(zust){ if(modeAbo && zahl() === 'saison') htmlz.push(`<tr><td>Zustellung <span class="hint">je Lieferung, bei der Lieferung zu zahlen</span></td><td>+${eur(D.zustellung)} €</td></tr>`); else { summe += D.zustellung; htmlz.push(`<tr><td>Zustellung${modeAbo ? ' (je Lieferung)' : ''}</td><td>${eur(D.zustellung)} €</td></tr>`); } }
   summe = Math.round(summe * 100) / 100;
   const name = $('name').value.trim(), tel = $('tel').value.trim(), adr = $('adr').value.trim(), kom = $('kom').value.trim();
   const L = ['Bestellung WölzerTaler', `Woche: ${w.label}`];
-  if(modeAbo){ const k = kiste(); L.push(`Art: Abo-Anfrage Kiste ${k === 'klein' ? 'klein' : 'groß'} (${eur(D.abo[k])} € pro Woche), Start ab dieser Woche`); }
+  if(modeAbo){ const k = kiste(); const ws = aboWochen(); const P = aboPreis(); L.push(`Art: Abo-Anfrage Kiste ${k === 'klein' ? 'klein' : 'groß'} (${eur(D.abo[k])} € pro Woche), ganze Saison KW ${ws.length ? ws[0].kw : ''}–${ws.length ? ws[ws.length - 1].kw : ''} (${kis(ws.length)}), ${zahl() === 'saison' ? `Vorauszahlung ${eur(P.voraus)} €${P.gratis ? ' (1 Kiste geschenkt)' : ''}` : 'Zahlung wöchentlich bei Abholung'}`); }
   else L.push('Art: Einzelbestellung');
   const kom1 = kom.replace(/\s*[\r\n]+\s*/g, ' / ');
   L.push(`Name: ${name.replace(/\s*[\r\n]+\s*/g, ' ')}`, `Telefon: ${tel}`, zust ? `Zustellung (+${eur(D.zustellung)} €)` : 'Abholung am Hof');
@@ -333,7 +433,8 @@ function fehlerVon(n){ const m = baue();
 
 // ---------- Ablauf ----------
 const NAMEN = ['Woche', 'Auswahl', 'Angaben', 'Senden'];
-function renderSteps(){ $('steps').innerHTML = NAMEN.map((n, i) => { const k = i + 1, cls = k < schritt ? 'done' : k === schritt ? 'cur' : '';
+function namen(){ return art() === 'abo' ? ['Start', 'Kiste', 'Angaben', 'Senden'] : NAMEN; }
+function renderSteps(){ $('steps').innerHTML = namen().map((n, i) => { const k = i + 1, cls = k < schritt ? 'done' : k === schritt ? 'cur' : '';
   return `<li><button type="button" class="${cls}" data-go="${k}" ${k > besucht ? 'disabled' : ''} aria-current="${k === schritt ? 'step' : 'false'}" aria-label="Schritt ${k} von 4: ${n}${k < schritt ? ', erledigt' : ''}"><span class="bar"></span><span class="lbl">${k} · ${n}</span></button></li>`; }).join(''); }
 function geh(n, fokus = true){
   schritt = n; besucht = Math.max(besucht, n); alleFehlerWeg();
@@ -347,20 +448,22 @@ function refresh(){
   const m = baue(), w = woche();
   $('adrL').hidden = lief() !== 'zustellung'; $('karte2').hidden = !D.karte || lief() === 'zustellung';
   if(D.hof){ $('abholTxt').textContent = `${hofTxt(w)}${D.hof.ort ? ' · ' + D.hof.ort : ''}.`; }
+  $('spaet1').textContent = spaet(w) ? SPAET_TXT : ''; $('spaet4').textContent = spaet(w) ? SPAET_TXT : '';
   // Leiste unten
   $('dockSum').textContent = eur(m.summe) + ' €';
-  $('dockN').textContent = `KW ${w.kw} · ` + (m.modeAbo ? `Abo Kiste ${kiste() === 'klein' ? 'klein' : 'groß'}` : (m.anzahl ? m.anzahl + (m.anzahl === 1 ? ' Gemüse' : ' Gemüse') + ' im Korb' : 'noch nichts im Korb'));
+  $('dockN').textContent = (m.modeAbo ? `Saison-Abo ab KW ${w.kw} · ${zahl() === 'saison' ? 'im Voraus' : 'je Woche'}` : `KW ${w.kw} · ` +  (m.anzahl ? m.anzahl + ' Gemüse im Korb' : 'noch nichts im Korb'));
   $('zurueck').hidden = schritt === 1;
   $('weiter').hidden = schritt === 4 || vorbei;
   $('weiter').textContent = schritt === 3 ? 'Prüfen' : 'Weiter';
   // Übersicht
   if(schritt === 4){
     $('uebersicht').innerHTML = `<table class="sum">${m.htmlz.join('')}<tr class="tot"><td>Summe</td><td>${eur(m.summe)} €</td></tr></table>
-      <dl class="facts" style="margin-top:12px"><dt>Woche</dt><dd>${esc(w.label)}</dd><dt>${m.zust ? 'Zustellung' : 'Abholung'}</dt><dd>${m.zust ? esc(m.adr) : esc(D.hof ? hofTxt(w) + (D.hof.ort ? ', ' + D.hof.ort : '') : 'am Hof, Zeit nach Absprache')}${!m.zust && D.karte ? `<br><a class="karte" href="${esc(D.karte)}" target="_blank" rel="noopener">${PIN}Auf der Karte zeigen</a>` : ''}</dd><dt>Name</dt><dd>${esc(m.name)}</dd><dt>Telefon</dt><dd>${esc(m.tel)}</dd>${m.kom ? `<dt>Wünsche</dt><dd>${esc(m.kom)}</dd>` : ''}</dl>
+      <dl class="facts" style="margin-top:12px"><dt>${m.modeAbo ? 'Abo' : 'Woche'}</dt><dd>${m.modeAbo ? (() => { const ws = aboWochen(); return ws.length ? `KW ${ws[0].kw} bis KW ${ws[ws.length - 1].kw} · ${kis(ws.length)} · ${zahl() === 'saison' ? 'Vorauszahlung ' + eur(aboPreis().voraus) + ' €' + (aboPreis().gratis ? ' (1 Kiste geschenkt)' : '') : 'Zahlung wöchentlich'}` : ''; })() : esc(w.label)}</dd><dt>${m.zust ? 'Zustellung' : 'Abholung'}</dt><dd>${m.zust ? esc(m.adr) : esc(D.hof ? hofTxt(w) + (D.hof.ort ? ', ' + D.hof.ort : '') : 'am Hof, Zeit nach Absprache')}${!m.zust && D.karte ? `<br><a class="karte" href="${esc(D.karte)}" target="_blank" rel="noopener">${PIN}Auf der Karte zeigen</a>` : ''}</dd><dt>Name</dt><dd>${esc(m.name)}</dd><dt>Telefon</dt><dd>${esc(m.tel)}</dd>${m.kom ? `<dt>Wünsche</dt><dd>${esc(m.kom)}</dd>` : ''}</dl>
       <div class="row"><button type="button" class="edit" data-go="2">Auswahl ändern</button><button type="button" class="edit" data-go="3">Angaben ändern</button></div>`;
     $('vorschau').textContent = m.text;
     const ok = $('dsgvo').checked; $('waBtn').setAttribute('aria-disabled', String(!ok)); $('waBtn').href = ok ? 'https://wa.me/' + (D.wa || '') + '?text=' + encodeURIComponent(m.text) : '#';
-    $('waHinweis').textContent = D.wa ? `Die Nachricht geht an ${D.waAnzeige}. In WhatsApp tippst du dann noch auf Senden.` : 'Es öffnet sich WhatsApp mit dem fertigen Text.';
+    $('waHinweis').textContent = D.wa ? `Die Nachricht geht an ${D.waAnzeige}. In WhatsApp tippst du dann noch auf Senden. Kein WhatsApp? Dann per SMS senden oder den Text kopieren.` : 'Es öffnet sich WhatsApp mit dem fertigen Text.';
+    $('smsBtn').setAttribute('aria-disabled', String(!ok)); $('copyBtn').setAttribute('aria-disabled', String(!ok)); $('smsBtn').href = ok && D.wa ? 'sms:+' + D.wa + '?&body=' + encodeURIComponent(m.text) : '#';
   }
 }
 function fehlerWeg(feld){ const p = $('err-' + feld); if(p) p.textContent = ''; const el = $(feld); if(el){ el.classList.remove('err'); el.removeAttribute('aria-invalid'); } }
@@ -372,9 +475,10 @@ $('weiter').addEventListener('click', () => { const f = fehlerVon(schritt); if(f
 $('zurueck').addEventListener('click', () => geh(Math.max(1, schritt - 1)));
 document.addEventListener('click', e => { const g = e.target.closest('[data-go]'); if(!g || g.disabled) return; const n = +g.dataset.go;
   if(n > schritt){ for(let k = Math.max(2, schritt); k < n; k++){ const f = fehlerVon(k); if(f){ geh(k); fehlerZeigen(f); return; } } } geh(n); });
-document.addEventListener('change', e => { if(e.target.id) fehlerWeg(e.target.id); refresh(); });
+document.addEventListener('change', e => { if(e.target.id) fehlerWeg(e.target.id); if(e.target.name === 'art' || e.target.name === 'kiste' || e.target.name === 'zahl'){ renderAbo(); renderSteps(); if(art() === 'abo') pruneQty(); } refresh(); });
 document.addEventListener('input', e => { if(e.target.id && e.target.value.trim()) fehlerWeg(e.target.id); refresh(); });
 $('waBtn').addEventListener('click', e => { if($('waBtn').getAttribute('aria-disabled') === 'true'){ e.preventDefault(); fehlerZeigen(['dsgvo', 'Bitte bestätige zuerst den Datenschutzhinweis.']); } });
+$('smsBtn').addEventListener('click', e => { if($('smsBtn').getAttribute('aria-disabled') === 'true'){ e.preventDefault(); fehlerZeigen(['dsgvo', 'Bitte bestätige zuerst den Datenschutzhinweis.']); } });
 $('copyBtn').addEventListener('click', async () => {
   if(!$('dsgvo').checked){ fehlerZeigen(['dsgvo', 'Bitte bestätige zuerst den Datenschutzhinweis.']); return; }
   const m = baue();
@@ -382,7 +486,8 @@ $('copyBtn').addEventListener('click', async () => {
   catch(err){ const d = $('vorschau').closest('details'); d.open = true; const r = document.createRange(); r.selectNodeContents($('vorschau')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); $('copyBtn').textContent = 'Text markiert, bitte kopieren'; }
   setTimeout(() => $('copyBtn').textContent = 'Text kopieren', 2500);
 });
-renderWochen(); geh(1, false);
+if(location.hash === '#abo'){ const r = document.querySelector('input[name=art][value=abo]'); if(r) r.checked = true; }
+renderWochen(); renderAbo(); geh(1, false);
 </script>
 
 </body>
